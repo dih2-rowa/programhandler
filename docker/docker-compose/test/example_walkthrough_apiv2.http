@@ -1,0 +1,40 @@
+
+GET http://localhost:1026/version
+
+###
+GET http://localhost:1026/v2
+
+### Query entity
+GET http://localhost:1026/v2/entities
+
+### Entity creation
+POST http://localhost:1026/v2/entities
+content-type: application/json
+
+{
+  "id": "Room1",
+  "type": "Room",
+  "temperature": {
+    "value": 23,
+    "type": "Float"
+  },
+  "pressure": {
+    "value": 720,
+    "type": "Integer"
+  }
+}
+
+### Update Entity
+PATCH http://localhost:1026/v2/entities/Room1/attrs
+content-type: application/json
+
+{
+  "temperature": {
+    "value": -25,
+    "type": "Float"
+  },
+  "pressure": {
+    "value": 720,
+    "type": "Integer"
+  }
+}
