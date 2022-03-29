@@ -42,4 +42,7 @@ The file [example_walkthrough_apiv2.http](example_walkthrough_apiv2.http) includ
 - [Postman](https://www.postman.com/) API Platform
 - [VSCode REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) allows you to send HTTP request and view the response in Visual Studio Code directly.
 
+## OCB with persistent database
+With including *docker volume* in the docker-compose file from [Orion Context Broker (OCB) minimal](/docker/docker-compose/README.md#testing-the-ocb) we can store the entities and Configurations. The result is [docker-compose_orion-persistent.yml](docker-compose_orion-persistent.yml)
+
 
