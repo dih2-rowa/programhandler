@@ -40,4 +40,3 @@ coverage/
 .next
 push.sh
 package-lock.json
-docker/docker-compose/test/RobProgramVersionInfo.http
