@@ -1,4 +1,4 @@
-# Docker Compose Examples
+# Docker Compose Example
 ## Preperations
 In order to use the following examples it will be assumed that your current working directory is the *programmhandler/docker/docker-compose/test/* folder and your docker is up. 
 
