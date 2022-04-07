@@ -45,4 +45,23 @@ The file [example_walkthrough_apiv2.http](example_walkthrough_apiv2.http) includ
 ## OCB with persistent database
 With including *docker volume* in the docker-compose file from [Orion Context Broker (OCB) minimal](/docker/docker-compose/README.md#testing-the-ocb) we can store the entities and Configurations. The result is [docker-compose_orion-persistent.yml](docker-compose_orion-persistent.yml)
 
+## FIWARE Database integration
+
+### Preparations LINUX/WSL2
+- Set vm.max_map_count = 262144 in /etc/sysctl.conf
+- Applay with sudo sysctl -p
+
+### docker-compose 
+```bash
+docker-compose -f docker-compose_orion-persistent.yml -f docker-compose_db.yml -d up
+```
+### testing (see [test_fiware_db.http](test_fiware_db.http))
+
+- Check connections
+- Create Entity
+- Create Subscription (more Information [Doku quantumleap](https://quantumleap.readthedocs.io/en/latest/user/using/#orion-subscription))
+- Update Entitiy
+- Query DB [link](http://localhost:4200/#!/console?query=SELECT%20entity_id,%20entity_type,%20time_index,%20fiware_servicepath,%20__original_ngsi_entity__,%20pressure,%20temperature%0AFROM%20%22doc%22.%22etroom%22%0ALIMIT%20100)
+
+
 
