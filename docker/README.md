@@ -1,13 +1,5 @@
 # Robosonic
 
-## OCB Datatype
-
-See [#10](https://github.com/dih2-rowa/programhandler/issues/10)
-
-## RPH API
-
-See [#7](https://github.com/dih2-rowa/programhandler/issues/7) and [#6](https://github.com/dih2-rowa/programhandler/issues/6)
-
 
 ---
 # Original README
