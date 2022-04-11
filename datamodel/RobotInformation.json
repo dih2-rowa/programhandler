@@ -1,0 +1,44 @@
+{
+  "id": "Robot1",
+  "type": "Processdata",
+  "version": {
+    "value": 1,
+    "type": "Integer"
+  },
+  "orderId": {
+    "value": "Ordernumber123",
+    "type": "String"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 32,
+    "type": "Integer"
+  },
+  "prodParts": {
+    "value": 1987,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Processed part", 
+    "type": "String"
+  },
+    "gripperLoaded": {
+    "value": false,
+    "type": "Boolean"
+  },
+    "serviceLife": {
+    "value": 320000,
+    "type": "Integer"
+  }
+}

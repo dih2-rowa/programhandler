@@ -1,0 +1,24 @@
+{
+  "id": "Blasius3",
+  "type": "Product",
+  "programName": {
+    "value": "blasius1.src",
+    "type": "String"
+  },
+  "programVersion": {
+    "value": 1,
+    "type": "Integer"
+  },
+  "versionOnRobot": {
+      "value": true,
+      "type": "Boolean"
+  },
+  "processingLength": {
+    "value": 324,
+    "type": "Integer"
+  },
+  "planCycleTime": {
+    "value": 34,
+    "type": "Integer"
+  }
+}
