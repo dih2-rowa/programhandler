@@ -23,6 +23,9 @@ content-type: application/json
   }
 }
 
+### check entity
+GET http://localhost:1026/v2/entities/
+
 ### Add subscription to entity (https://quantumleap.readthedocs.io/en/latest/user/using/#orion-subscription)
 POST http://localhost:1026/v2/subscriptions
 content-type: application/json
@@ -70,5 +73,5 @@ content-type: application/json
 }
 
 ## Check crate db in Browser
- http://localhost:4200/#!/console?query=SELECT%20entity_id,%20entity_type,%20time_index,%20fiware_servicepath,%20__original_ngsi_entity__,%20pressure,%20temperature%0AFROM%20%22doc%22.%22etroom%22%0ALIMIT%20100;
+####"http://localhost:4200/#!/console?query=SELECT%20entity_id,%20entity_type,%20time_index,%20fiware_servicepath,%20__original_ngsi_entity__,%20pressure,%20temperature%0AFROM%20%22doc%22.%22etroom%22%0ALIMIT%20100;
 

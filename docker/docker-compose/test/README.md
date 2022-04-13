@@ -49,7 +49,7 @@ With including *docker volume* in the docker-compose file from [Orion Context Br
 
 ### Preparations LINUX/WSL2
 - Set vm.max_map_count = 262144 in /etc/sysctl.conf
-- Applay with sudo sysctl -p
+- Apply with sudo sysctl -p
 
 ### docker-compose 
 ```bash
