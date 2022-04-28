@@ -16,5 +16,9 @@
     "deadline": {
         "value": "2017-08-19 12:17:55",
         "type": "Datetime"
-    }
+    },
+    "status": {
+      "value": "Finished",
+      "type": "String"
+  }
   }
