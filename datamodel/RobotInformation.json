@@ -33,11 +33,7 @@
     "value": "Processed part", 
     "type": "String"
   },
-    "gripperLoaded": {
-    "value": false,
-    "type": "Boolean"
-  },
-    "serviceLife": {
+    "restServiceLife": {
     "value": 320000,
     "type": "Integer"
   }
