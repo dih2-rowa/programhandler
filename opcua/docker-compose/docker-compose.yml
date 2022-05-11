@@ -50,7 +50,8 @@ services:
     image: fiware/orion:latest
     networks:
       - hostnet
-      - iotnet
+      - ocbnet
+    #  - iotnet
     ports:
       - "1026:1026"
     depends_on:
