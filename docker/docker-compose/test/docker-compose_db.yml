@@ -1,0 +1,32 @@
+version: '3.9'
+services:
+ # Quantum Leap is persisting Short Term History to Crate-DB
+  quantumleap:
+    image: smartsdk/quantumleap:0.8
+    hostname: quantumleap
+    container_name: fiware-quantumleap
+    restart: always
+    ports:
+      - "8668:8668"
+    depends_on:
+      - crate-db
+    environment:
+      - CRATE_HOST=crate-db
+    healthcheck:
+      test: curl --fail -s http://quantumleap:8668/version || exit 1
+  crate-db:
+    image: crate:4.7.1
+    hostname: crate-db
+    container_name: db-crate
+    restart: always
+    ports:
+      # Admin UI
+      - "4200:4200"
+      # Transport protocol
+      - "4300:4300"
+    command: crate -Cauth.host_based.enabled=false  -Ccluster.name=democluster -Chttp.cors.enabled=true -Chttp.cors.allow-origin="*"
+    volumes:
+      - crate-db:/data
+volumes:
+  crate-db:
+  
