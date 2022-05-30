@@ -30,7 +30,7 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config:/opt/iotagent-opcua/conf
+      - ../config:/opt/iotagent-opcua/config
 
     command: /usr/bin/tail -f /var/log/lastlog
 
