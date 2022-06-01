@@ -98,7 +98,7 @@ With including *docker volume* in the docker-compose file from [Orion Context Br
 ## FIWARE Database integration
 
 ### Preparations LINUX/WSL2
-- Set vm.max_map_count = 262144 in /etc/sysctl.conf
+- Set vm.max_map_count=262144 in /etc/sysctl.conf
 - Apply with sudo sysctl -p
 
 ### docker-compose 
