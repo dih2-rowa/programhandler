@@ -1,0 +1,119 @@
+{
+	"logLevel": "INFO",
+	"multiCore": false,
+	"relaxTemplateValidation": true,
+	"contextBroker": {
+		"host": "orion",
+		"port": 1026,
+		"service": "opcua_car",
+		"subservice": "/demo"
+	},
+	"server": {
+		"port": 4001,
+		"baseRoot": "/"
+	},
+	"deviceRegistry": {
+		"type": "memory"
+	},
+	"mongodb": {
+		"host": "iot_mongo",
+		"port": "27017",
+		"db": "iotagent",
+		"retries": 5,
+		"retryTime": 5
+	},
+	"types": {
+		"Robot": {
+			"service": "opcua_car",
+			"subservice": "/demo",
+			"active": [ {
+				"name": "Sensor1",
+				"type": "Boolean"
+			},
+			{
+				"name": "Sensor2",
+				"type": "Boolean"
+			},
+			{
+				"name": "Counter",
+				"type": "Number"
+			},
+			{
+				"name": "Wert",
+				"type": "Number"
+			},
+			{
+				"name": "Text",
+				"type": "Text"
+			}],
+			"commands": [{
+				"name": "Wert",
+				"type": "command"
+			}, {
+				"name": "Text",
+				"type": "command"
+			}, {
+				"name": "Sensor1",
+				"type": "command"
+			}]
+			
+		}
+	},
+	"browseServerOptions": null,
+	"service": "opcua_car",
+	"subservice": "/demo",
+	"providerUrl": "http://iotage:4001",
+	"pollingExpiration": "200000",
+	"pollingDaemonFrequency": "20000",
+	"deviceRegistrationDuration": "P1M",
+	"defaultType": null,
+	"contexts": [{
+		"id": "Robot1",
+		"type": "Robot",
+		"service": "opcua_car",
+		"subservice": "/demo",
+		"polling": false,
+		"mappings": [{
+			"ocb_id": "Sensor1",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Sensor_1",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "Sensor2",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Sensor_2",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "Counter",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Counter",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "Wert",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Wert",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "Text",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Text",
+			"object_id": null,
+			"inputArguments": []
+		}]
+	}],
+	"contextSubscriptions" : [{
+		"id": "Robot1",
+		"type": "Robot",
+		"mappings": [{
+			"ocb_id": "Wert",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Wert",
+			"object_id": null,
+			"inputArguments": []
+		}]
+	}]
+}

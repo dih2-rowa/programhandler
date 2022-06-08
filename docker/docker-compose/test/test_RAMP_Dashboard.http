@@ -65,11 +65,11 @@ fiware-servicepath: /demo
         "entities": [
         {
             "idPattern": ".*",
-            "type": "Robot"
+            "type": "Processdata"
         }
         ],
         "condition": {
-            "attrs": ["currCycleTime"]
+            "attrs": [] //Subscription valid for all attributes
         }
     },
     "notification": {
@@ -82,8 +82,6 @@ fiware-servicepath: /demo
 }
 
 
-
-
 ### Update Entity
 PATCH http://localhost:1026/v2/entities/Robot1/attrs
 content-type: application/json
@@ -91,9 +89,9 @@ fiware-service: opcua_car
 fiware-servicepath: /demo
 
 {
-  "currCycleTime": {
-    "value": 51,
-    "type": "Float"
+  "drawer2Status": {
+    "value": "Egal",
+    "type": "String"
   }
 }
 
