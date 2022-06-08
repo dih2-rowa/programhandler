@@ -27,33 +27,83 @@
 			"service": "opcua_car",
 			"subservice": "/demo",
 			"active": [ {
-				"name": "Sensor1",
+				"name": "ProductID",
+				"type": "String"
+			},
+			{
+				"name": "RobotRunning",
 				"type": "Boolean"
 			},
 			{
-				"name": "Sensor2",
-				"type": "Boolean"
-			},
-			{
-				"name": "Counter",
+				"name": "RobotSpeed",
 				"type": "Number"
 			},
 			{
-				"name": "Wert",
+				"name": "CurrentCycleTime",
 				"type": "Number"
 			},
 			{
-				"name": "Text",
-				"type": "Text"
+				"name": "ProducedParts",
+				"type": "Number"
+			},
+			{
+				"name": "Drawer1State",
+				"type": "String"
+			},
+			{
+				"name": "Drawer2State",
+				"type": "String"
+			},
+			{
+				"name": "OrderNrfromRobot",
+				"type": "String"
+			},
+			{
+				"name": "StartTime",
+				"type": "String"
+			},
+			{
+				"name": "FinishTime",
+				"type": "String"
+			},
+			{
+				"name": "OrderStatefromRobot",
+				"type": "String"
 			}],
 			"commands": [{
-				"name": "Wert",
+				"name": "OrderNumberOnServer",
 				"type": "command"
-			}, {
-				"name": "Text",
+			}, 
+			{
+				"name": "OrderStateOnServer",
 				"type": "command"
-			}, {
-				"name": "Sensor1",
+			}, 
+			{
+				"name": "PlannedCycleTime",
+				"type": "command"
+			},
+			{
+				"name": "PlannedParts",
+				"type": "command"
+			},
+			{
+				"name": "ProgrammNameOnRobot",
+				"type": "command"
+			},
+			{
+				"name": "ProgrammVersionOnServer",
+				"type": "command"
+			},
+			{
+				"name": "VersionOnRobot",
+				"type": "command"
+			},
+			{
+				"name":	"ProgrammNameOnServer",
+				"type": "command"
+			},
+			{
+				"name": "ProgrammVersionOnRobot",
 				"type": "command"
 			}]
 			
@@ -74,34 +124,139 @@
 		"subservice": "/demo",
 		"polling": false,
 		"mappings": [{
-			"ocb_id": "Sensor1",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Sensor_1",
+			"ocb_id": "ProductID",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProductID",
 			"object_id": null,
 			"inputArguments": []
 		},
 		{
-			"ocb_id": "Sensor2",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Sensor_2",
+			"ocb_id": "RobotRunning",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotRunning",
 			"object_id": null,
 			"inputArguments": []
 		},
 		{
-			"ocb_id": "Counter",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Counter",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "Wert",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Wert",
+			"ocb_id": "RobotSpeed",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotSpeed",
 			"object_id": null,
 			"inputArguments": []
 		},
 	
 		{
-			"ocb_id": "Text",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Text",
+			"ocb_id": "CurrentCycleTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".currCycleTime",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "ProducedParts",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProdParts",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "Drawer1State",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer1State",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "Drawer2State",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer2State",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "OrderNrfromRobot",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderNumber_Rob",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "StartTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".startTime",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "FinishTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".finishedTime",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "OrderStatefromRobot",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderState_Rob",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "OrderNumberOnServer",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderNumber_Server",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "OrderStateOnServer",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderState_Server",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "PlannedCycleTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".planCycleTime",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "PlannedParts",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".plannedParts",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "ProgrammNameOnRobot",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".programName_OnRob",
+			"object_id": null,
+			"inputArguments": []
+		},
+		
+		{
+			"ocb_id": "ProgrammVersionOnServer",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".programVersion_Server",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "VersionOnRobot",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".versionOnRobot",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "ProgrammNameOnServer",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProgramName_Server",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "ProgrammVersionOnRobot",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProgramVersion_OnRob",
 			"object_id": null,
 			"inputArguments": []
 		}]
