@@ -1,0 +1,105 @@
+### test connection quantumleap
+GET http://localhost:8668/version
+
+## Add test entity
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+  "id": "Robot1",
+  "type": "Processdata",
+  "version": {
+    "value": 1,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 32,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Processed part", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 320000,
+    "type": "Integer"
+  }
+}
+
+
+### check entity
+GET http://localhost:1026/v2/entities
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+### Query entity
+GET http://localhost:1026/v2/subscriptions
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+
+### Add subscription to entity (https://quantumleap.readthedocs.io/en/latest/user/using/#orion-subscription)
+POST http://localhost:1026/v2/subscriptions
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+    "description": "Test subscription",
+    "subject": {
+        "entities": [
+        {
+            "idPattern": ".*",
+            "type": "Processdata"
+        }
+        ],
+        "condition": {
+            "attrs": [] 
+            //Subscription valid for all attributes
+        }
+    },
+    "notification": {
+        "http": {
+            "url": "http://quantumleap:8668/v2/notify"
+        },
+        "attrs": [],
+        "metadata": ["dateCreated", "dateModified"]
+    }
+}
+
+
+### Update Entity
+PATCH http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+  "currCycleTime": {
+    "value": 12,
+    "type": "Integer"
+  }
+}
+
+###
+GET http://localhost:4001/iot/devices/
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+## Check crate db in Browser
+"http://localhost:4200/#!/console?query=SELECT%20entity_id,%20entity_type,%20time_index,%20fiware_servicepath,%20__original_ngsi_entity__,%20pressure,%20temperature%0AFROM%20%22doc%22.%22etroom%22%0ALIMIT%20100;

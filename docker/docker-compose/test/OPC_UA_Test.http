@@ -72,14 +72,14 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:4001/iot/devices/age04_Car
+GET http://localhost:4001/iot/devices/
 fiware-service: opcua_car
 fiware-servicepath: /demo
 
 
 
 ### Query entity
-GET http://localhost:1026/v2/entities/Robot1
+GET http://localhost:1026/v2/entities/
 fiware-service: opcua_car
 fiware-servicepath: /demo
 
