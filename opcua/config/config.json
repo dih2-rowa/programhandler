@@ -5,7 +5,7 @@
 	"contextBroker": {
 		"host": "orion",
 		"port": 1026,
-		"service": "opcua_car",
+		"service": "robot_info",
 		"subservice": "/demo"
 	},
 	"server": {
@@ -23,94 +23,109 @@
 		"retryTime": 5
 	},
 	"types": {
-		"Robot": {
-			"service": "opcua_car",
+		"Order": {
+			"service": "robot_info",
 			"subservice": "/demo",
 			"active": [ {
 				"name": "ProductID",
 				"type": "String"
 			},
 			{
-				"name": "RobotRunning",
-				"type": "Boolean"
-			},
-			{
-				"name": "RobotSpeed",
+				"name": "planParts",
 				"type": "Number"
 			},
 			{
-				"name": "CurrentCycleTime",
+				"name": "prodParts",
 				"type": "Number"
 			},
 			{
-				"name": "ProducedParts",
-				"type": "Number"
-			},
-			{
-				"name": "Drawer1State",
+				"name": "startTime",
 				"type": "String"
 			},
 			{
-				"name": "Drawer2State",
+				"name": "finishedTime",
 				"type": "String"
 			},
 			{
-				"name": "OrderNrfromRobot",
+				"name": "deadline",
 				"type": "String"
 			},
 			{
-				"name": "StartTime",
+				"name": "orderStatus",
 				"type": "String"
 			},
 			{
-				"name": "FinishTime",
+				"name": "workingStation",
 				"type": "String"
-			},
-			{
-				"name": "OrderStatefromRobot",
-				"type": "String"
-			}],
+			}
+			],
 			"commands": [{
-				"name": "OrderNumberOnServer",
-				"type": "command"
-			}, 
-			{
-				"name": "OrderStateOnServer",
-				"type": "command"
-			}, 
-			{
-				"name": "PlannedCycleTime",
-				"type": "command"
-			},
-			{
-				"name": "PlannedParts",
-				"type": "command"
-			},
-			{
-				"name": "ProgrammNameOnRobot",
-				"type": "command"
-			},
-			{
-				"name": "ProgrammVersionOnServer",
-				"type": "command"
-			},
-			{
-				"name": "VersionOnRobot",
-				"type": "command"
-			},
-			{
-				"name":	"ProgrammNameOnServer",
-				"type": "command"
-			},
-			{
-				"name": "ProgrammVersionOnRobot",
-				"type": "command"
-			}]
-			
-		}
+				}]
+		},
+		"Product": {
+			"service": "robot_info",
+			"subservice": "/demo",
+			"active": [ {
+					"name": "programName",
+					"type": "String"
+				},
+				{
+					"name": "programVersion",
+					"type": "Number"
+				},
+				{
+					"name": "versionOnRobot",
+					"type": "Boolean"
+				},
+				{
+					"name": "processingLength",
+					"type": "Number"
+				},
+				{
+					"name": "planCycleTime",
+					"type": "Number"
+				}
+			],
+			"commands": [{
+				}]
+		},
+		"Processdata": {
+			"service": "robot_info",
+			"subservice": "/demo",
+			"active": [ {
+					"name": "version",
+					"type": "Number"
+				},
+				{
+					"name": "robotRunning",
+					"type": "Boolean"
+				},
+				{
+					"name": "robotspeed",
+					"type": "Integer"
+				},
+				{
+					"name": "currCycleTime",
+					"type": "Number"
+				},
+				{
+					"name": "drawer1Status",
+					"type": "String"
+				},
+				{
+					"name": "drawer2Status",
+					"type": "String"
+				},
+				{
+					"name": "restServiceLife",
+					"type": "Number"
+				}],
+				"commands": [{
+				}]
+			}
 	},
 	"browseServerOptions": null,
-	"service": "opcua_car",
+	"service": "robot_info",
 	"subservice": "/demo",
 	"providerUrl": "http://iotage:4001",
 	"pollingExpiration": "200000",
@@ -119,148 +134,139 @@
 	"defaultType": null,
 	"contexts": [{
 		"id": "Robot1",
-		"type": "Robot",
-		"service": "opcua_car",
+		"type": "Order",
+		"service": "robot_info",
 		"subservice": "/demo",
 		"polling": false,
 		"mappings": [{
-			"ocb_id": "ProductID",
+			"ocb_id": "productID",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProductID",
 			"object_id": null,
 			"inputArguments": []
 		},
 		{
-			"ocb_id": "RobotRunning",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotRunning",
+			"ocb_id": "planParts",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".plannedParts",
 			"object_id": null,
 			"inputArguments": []
 		},
 		{
-			"ocb_id": "RobotSpeed",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotSpeed",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "CurrentCycleTime",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".currCycleTime",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "ProducedParts",
+			"ocb_id": "prodParts",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProdParts",
 			"object_id": null,
 			"inputArguments": []
 		},
 	
 		{
-			"ocb_id": "Drawer1State",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer1State",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "Drawer2State",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer2State",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "OrderNrfromRobot",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderNumber_Rob",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "StartTime",
+			"ocb_id": "startTime",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".startTime",
 			"object_id": null,
 			"inputArguments": []
 		},
 	
 		{
-			"ocb_id": "FinishTime",
+			"ocb_id": "finishedTime",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".finishedTime",
 			"object_id": null,
 			"inputArguments": []
 		},
 	
 		{
-			"ocb_id": "OrderStatefromRobot",
+			"ocb_id": "orderstatus",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderState_Rob",
 			"object_id": null,
 			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "OrderNumberOnServer",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderNumber_Server",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "OrderStateOnServer",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderState_Server",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "PlannedCycleTime",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".planCycleTime",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "PlannedParts",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".plannedParts",
-			"object_id": null,
-			"inputArguments": []
-		},
-	
-		{
-			"ocb_id": "ProgrammNameOnRobot",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".programName_OnRob",
+		}]
+	},
+	{
+		"id": "Robot2",
+		"type": "Product",
+		"service": "robot_info",
+		"subservice": "/demo",
+		"polling": false,
+		"mappings": [{
+			"ocb_id": "programName",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProgramName_Server",
 			"object_id": null,
 			"inputArguments": []
 		},
 		
 		{
-			"ocb_id": "ProgrammVersionOnServer",
+			"ocb_id": "programVersion",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".programVersion_Server",
 			"object_id": null,
 			"inputArguments": []
 		},
-	
+		
 		{
-			"ocb_id": "VersionOnRobot",
+			"ocb_id": "versionOnRobot",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".versionOnRobot",
 			"object_id": null,
 			"inputArguments": []
 		},
-	
+		
 		{
-			"ocb_id": "ProgrammNameOnServer",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProgramName_Server",
+			"ocb_id": "planCycleTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".planCycleTime",
+			"object_id": null,
+			"inputArguments": []
+		}]
+	},
+	{"id": "Robot3",
+		"type": "Processdata",
+		"service": "robot_info",
+		"subservice": "/demo",
+		"polling": false,
+		"mappings": [{
+			"ocb_id": "version",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProgramVersion_OnRob",
 			"object_id": null,
 			"inputArguments": []
 		},
 	
 		{
-			"ocb_id": "ProgrammVersionOnRobot",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProgramVersion_OnRob",
+			"ocb_id": "robotRunning",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotRunning",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "robotSpeed",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotSpeed",
+			"object_id": null,
+			"inputArguments": []
+		},
+
+		{
+			"ocb_id": "currCycleTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".currCycleTime",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "drawer1Status",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer1State",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "drawer2Status",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer2State",
+			"object_id": null,
+			"inputArguments": []
+		},
+	
+		{
+			"ocb_id": "drawer2Status",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer2State",
 			"object_id": null,
 			"inputArguments": []
 		}]
-	}],
+	}
+	],
 	"contextSubscriptions" : [{
 		"id": "Robot1",
 		"type": "Robot",
