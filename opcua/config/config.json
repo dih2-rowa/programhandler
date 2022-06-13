@@ -139,7 +139,7 @@
 		"subservice": "/demo",
 		"polling": false,
 		"mappings": [{
-			"ocb_id": "productID",
+			"ocb_id": "ProductID",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProductID",
 			"object_id": null,
 			"inputArguments": []
