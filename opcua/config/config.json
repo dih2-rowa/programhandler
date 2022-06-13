@@ -59,8 +59,8 @@
 				"type": "String"
 			}
 			],
-			"commands": [{
-				}]
+			"commands": [
+				]
 		},
 		"Product": {
 			"service": "robot_info",
@@ -86,8 +86,8 @@
 					"type": "Number"
 				}
 			],
-			"commands": [{
-				}]
+			"commands": [
+				]
 		},
 		"Processdata": {
 			"service": "robot_info",
@@ -120,8 +120,8 @@
 					"name": "restServiceLife",
 					"type": "Number"
 				}],
-				"commands": [{
-				}]
+				"commands": [
+				]
 			}
 	},
 	"browseServerOptions": null,
@@ -156,21 +156,18 @@
 			"object_id": null,
 			"inputArguments": []
 		},
-	
 		{
 			"ocb_id": "startTime",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".startTime",
 			"object_id": null,
 			"inputArguments": []
 		},
-	
 		{
 			"ocb_id": "finishedTime",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".finishedTime",
 			"object_id": null,
 			"inputArguments": []
 		},
-	
 		{
 			"ocb_id": "orderstatus",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderState_Rob",
@@ -190,21 +187,18 @@
 			"object_id": null,
 			"inputArguments": []
 		},
-		
 		{
 			"ocb_id": "programVersion",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".programVersion_Server",
 			"object_id": null,
 			"inputArguments": []
 		},
-		
 		{
 			"ocb_id": "versionOnRobot",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".versionOnRobot",
 			"object_id": null,
 			"inputArguments": []
 		},
-		
 		{
 			"ocb_id": "planCycleTime",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".planCycleTime",
@@ -212,7 +206,8 @@
 			"inputArguments": []
 		}]
 	},
-	{"id": "Robot3",
+	{
+		"id": "Robot3",
 		"type": "Processdata",
 		"service": "robot_info",
 		"subservice": "/demo",
@@ -223,42 +218,36 @@
 			"object_id": null,
 			"inputArguments": []
 		},
-	
 		{
 			"ocb_id": "robotRunning",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotRunning",
 			"object_id": null,
 			"inputArguments": []
 		},
-	
 		{
 			"ocb_id": "robotSpeed",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotSpeed",
 			"object_id": null,
 			"inputArguments": []
 		},
-
 		{
 			"ocb_id": "currCycleTime",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".currCycleTime",
 			"object_id": null,
 			"inputArguments": []
 		},
-	
 		{
 			"ocb_id": "drawer1Status",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer1State",
 			"object_id": null,
 			"inputArguments": []
 		},
-	
 		{
 			"ocb_id": "drawer2Status",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer2State",
 			"object_id": null,
 			"inputArguments": []
 		},
-	
 		{
 			"ocb_id": "drawer2Status",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer2State",
@@ -267,14 +256,6 @@
 		}]
 	}
 	],
-	"contextSubscriptions" : [{
-		"id": "Robot1",
-		"type": "Robot",
-		"mappings": [{
-			"ocb_id": "Wert",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Wert",
-			"object_id": null,
-			"inputArguments": []
-		}]
-	}]
+	"contextSubscriptions" : [
+		]
 }
