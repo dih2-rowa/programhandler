@@ -1,0 +1,127 @@
+# curl http://localhost:4001/iot/devices \
+#      -H "fiware-service: opcua opcua_car" \
+#      -H "fiware-servicepath: /test/demo" \
+#      -H "Content-Type: application/json" \
+#      -d @add_device_NGSIv2.json
+
+## OPC UA Client
+###
+GET http://localhost:4001/iot/devices
+fiware-service: opcua 
+fiware-servicepath: /test
+
+###
+POST http://localhost:4001/iot/devices
+fiware-service: opcua
+fiware-servicepath: /test
+Content-Type: application/json
+
+{
+    "devices": [{
+      "device_id": "MyObject",
+      "service": "opcua",
+      "subservice" : "/test",
+      "entity_name": "MyObject",
+      "entity_type": "MyObject",
+      "endpoint": "opc.tcp://host.docker.internal:4840/freeopcua/server/",
+      "attributes": [
+        {
+          "object_id": "2:MyVariable",
+          "name": "2:MyVariable",
+          "type": "Number"
+        }
+      ],
+      "lazy": [],
+      "commands": [
+        {
+          "object_id": "2:mymethod",
+          "name": "2:mymethod",
+          "type": "command"
+        },
+        {
+          "object_id": "2:multiply",
+          "name": "2:multiply",
+          "type": "command"
+        }
+      ],
+      "static_attributes": []
+    }]
+}
+
+## OCB
+### Query entity
+GET http://localhost:1026/v2/entities/
+fiware-service: opcua 
+fiware-servicepath: /test
+
+### Query entity by id
+GET http://localhost:1026/v2/entities/MyObject/
+fiware-service: opcua 
+fiware-servicepath: /test
+
+### Query entity by attrs
+GET http://localhost:1026/v2/entities/MyObject/attrs/
+fiware-service: opcua 
+fiware-servicepath: /test
+
+### Update Entity
+PUT http://localhost:1026/v2/entities/MyObject/attrs/2:multiply?type=MyObject
+fiware-service: opcua 
+fiware-servicepath: /test
+content-type: application/json
+
+{
+  "value": [{"x":"1","y":"2"}],
+   "type": "command"
+}
+
+### Update Entity CAR
+PUT http://localhost:1026/v2/entities/MyObject/attrs/2:multiply?type=MyObject
+fiware-service: opcua 
+fiware-servicepath: /test
+content-type: application/json
+
+{
+   "value": [1,4],
+  "type": "command"
+}
+
+
+### Query entity
+GET http://localhost:1026/v2/subscriptions
+fiware-service: opcua
+fiware-servicepath: /test
+
+### Query registration
+GET http://localhost:1026/v2/registrations
+fiware-service: opcua 
+fiware-servicepath: /test
+
+
+### Add subscription to entity (https://quantumleap.readthedocs.io/en/latest/user/using/#orion-subscription)
+# POST http://localhost:1026/v2/subscriptions
+# content-type: application/json
+# fiware-service: opcua opcua_car
+# fiware-servicepath: /test/demo
+
+# {
+#     "description": "Test subscription",
+#     "subject": {
+#         "entities": [
+#         {
+#             "idPattern": ".*",
+#             "type": "Robot"
+#         }
+#         ],
+#         "condition": {
+#             "attrs": ["Wert"]
+#         }
+#     },
+#     "notification": {
+#         "http": {
+#             "url": "http://quantumleap:8668/v2/notify"
+#         },
+#         "attrs": [],
+#         "metadata": ["dateCreated", "dateModified"]
+#     }
+# }
