@@ -28,6 +28,12 @@ services:
       - orion
     volumes:
       - ../config:/opt/iotagent-opcua/conf
+    environment:
+      - IOTA_REGISTRY_TYPE=memory
+      - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
+      - IOTA_MONGO_HOST=iotmongo # The host name of MongoDB
+      - IOTA_MONGO_DB=iotagent_opcua # The name of the database used in mongoDB
+      - IOTA_CB_NGSI_VERSION=v2
 
     command: /usr/bin/tail -f /var/log/lastlog
 

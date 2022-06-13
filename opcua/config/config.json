@@ -102,7 +102,7 @@
 				},
 				{
 					"name": "robotspeed",
-					"type": "Integer"
+					"type": "Number"
 				},
 				{
 					"name": "currCycleTime",
@@ -239,12 +239,6 @@
 		{
 			"ocb_id": "drawer1Status",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer1State",
-			"object_id": null,
-			"inputArguments": []
-		},
-		{
-			"ocb_id": "drawer2Status",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer2State",
 			"object_id": null,
 			"inputArguments": []
 		},
