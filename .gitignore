@@ -43,3 +43,4 @@ package-lock.json
 docker/docker-compose/test/opcua/car-config/config.properties
 docker/docker-compose/test/opcua/car-config/car_config.json
 docker/docker-compose/test/OPC_UA_Test.http
+docker/docker-compose/test/OPC_UA_Test.http
