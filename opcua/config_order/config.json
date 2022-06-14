@@ -122,12 +122,13 @@
 		"type": "Order",
 		"mappings": [{
 			"ocb_id": "writeOrderstatus",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".writeOrderstatus",
-			"object_id": null,
+			"opcua_id": "ns=3;s=writeOrderstaus_DB.Method",
+			"object_id": "ns=3;s=writeOrderstatus",
 			"inputArguments": [{
-				"type": "HAAAAAAAAAAAAAAAAAAAALLLLLLLOOO",
-				"dataType": "String"
-			 }]
+				"type": "\"UAMethod_InParameters\".orderstate",
+				"datatype": 12
+			}
+			]
 		}]
 	}
 		]

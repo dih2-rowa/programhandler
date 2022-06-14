@@ -82,10 +82,20 @@ fiware-servicepath: /demo
 content-type: application/json
 
 {
-   "value": "Success",
+   "value": "testi",
    "type": "command"
 }
 
+### Update Entity Order
+PUT http://localhost:1026/v2/entities/Robot1/attrs/writeOrderstatus?type=Order
+fiware-service: robot_info 
+fiware-servicepath: /demo
+content-type: application/json
+
+{
+   "value": [{"orderstate":"bla"}],
+   "type": "command"
+}
 
 ### Query entity
 GET http://localhost:1026/v2/subscriptions
