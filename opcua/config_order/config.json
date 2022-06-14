@@ -1,0 +1,120 @@
+{
+	"logLevel": "INFO",
+	"multiCore": false,
+	"relaxTemplateValidation": true,
+	"contextBroker": {
+		"host": "orion",
+		"port": 1026,
+		"service": "robot_info",
+		"subservice": "/demo"
+	},
+	"server": {
+		"port": 4001,
+		"baseRoot": "/"
+	},
+	"deviceRegistry": {
+		"type": "memory"
+	},
+	"mongodb": {
+		"host": "iot_mongo",
+		"port": "27017",
+		"db": "iotagent",
+		"retries": 5,
+		"retryTime": 5
+	},
+	"types": {
+		"Order": {
+			"service": "robot_info",
+			"subservice": "/demo",
+			"active": [ {
+				"name": "ProductID",
+				"type": "String"
+			},
+			{
+				"name": "planParts",
+				"type": "Number"
+			},
+			{
+				"name": "prodParts",
+				"type": "Number"
+			},
+			{
+				"name": "startTime",
+				"type": "String"
+			},
+			{
+				"name": "finishedTime",
+				"type": "String"
+			},
+			{
+				"name": "deadline",
+				"type": "String"
+			},
+			{
+				"name": "orderStatus",
+				"type": "String"
+			},
+			{
+				"name": "workingStation",
+				"type": "String"
+			}
+			],
+			"commands": [
+				]
+		}
+	},
+	"browseServerOptions": null,
+	"service": "robot_info",
+	"subservice": "/demo",
+	"providerUrl": "http://iotage-order:4001",
+	"pollingExpiration": "200000",
+	"pollingDaemonFrequency": "20000",
+	"deviceRegistrationDuration": "P1M",
+	"defaultType": null,
+	"contexts": [{
+		"id": "Robot1",
+		"type": "Order",
+		"service": "robot_info",
+		"subservice": "/demo",
+		"polling": false,
+		"mappings": [{
+			"ocb_id": "ProductID",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProductID",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "planParts",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".plannedParts",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "prodParts",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProdParts",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "startTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".startTime",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "finishedTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".finishedTime",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "orderstatus",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderState_Rob",
+			"object_id": null,
+			"inputArguments": []
+		}]
+	}
+	],
+	"contextSubscriptions" : [
+		]
+}

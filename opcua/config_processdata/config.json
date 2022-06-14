@@ -1,0 +1,116 @@
+{
+	"logLevel": "INFO",
+	"multiCore": false,
+	"relaxTemplateValidation": true,
+	"contextBroker": {
+		"host": "orion",
+		"port": 1026,
+		"service": "robot_info",
+		"subservice": "/demo"
+	},
+	"server": {
+		"port": 4001,
+		"baseRoot": "/"
+	},
+	"deviceRegistry": {
+		"type": "memory"
+	},
+	"mongodb": {
+		"host": "iot_mongo",
+		"port": "27017",
+		"db": "iotagent",
+		"retries": 5,
+		"retryTime": 5
+	},
+	"types": {
+		"Processdata": {
+			"service": "robot_info",
+			"subservice": "/demo",
+			"active": [ {
+					"name": "version",
+					"type": "Number"
+				},
+				{
+					"name": "robotRunning",
+					"type": "Boolean"
+				},
+				{
+					"name": "robotspeed",
+					"type": "Number"
+				},
+				{
+					"name": "currCycleTime",
+					"type": "Number"
+				},
+				{
+					"name": "drawer1Status",
+					"type": "String"
+				},
+				{
+					"name": "drawer2Status",
+					"type": "String"
+				},
+				{
+					"name": "restServiceLife",
+					"type": "Number"
+				}],
+				"commands": [
+				]
+			}
+	},
+	"browseServerOptions": null,
+	"service": "robot_info",
+	"subservice": "/demo",
+	"providerUrl": "http://iotage-processdata:4001",
+	"pollingExpiration": "200000",
+	"pollingDaemonFrequency": "20000",
+	"deviceRegistrationDuration": "P1M",
+	"defaultType": null,
+	"contexts": [
+	{
+		"id": "Robot3",
+		"type": "Processdata",
+		"service": "robot_info",
+		"subservice": "/demo",
+		"polling": false,
+		"mappings": [{
+			"ocb_id": "version",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".ProgramVersion_OnRob",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "robotRunning",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotRunning",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "robotSpeed",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".RobotSpeed",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "currCycleTime",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".currCycleTime",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "drawer1Status",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer1State",
+			"object_id": null,
+			"inputArguments": []
+		},
+		{
+			"ocb_id": "drawer2Status",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".drawer2State",
+			"object_id": null,
+			"inputArguments": []
+		}]
+	}
+	],
+	"contextSubscriptions" : [
+		]
+}

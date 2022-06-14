@@ -12,8 +12,8 @@ services:
     # ports:
      # - "5001:5001"
 
-  iotage:
-    hostname: iotage
+  iotage-order:
+    hostname: iotage-order
     image: iotagent4fiware/iotagent-opcua:1.3.4
     networks:
       - hostnet
@@ -27,7 +27,57 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config:/opt/iotagent-opcua/conf
+      - ../config_order:/opt/iotagent-opcua/conf
+    environment:
+      - IOTA_REGISTRY_TYPE=memory
+      - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
+      - IOTA_MONGO_HOST=iotmongo # The host name of MongoDB
+      - IOTA_MONGO_DB=iotagent_opcua # The name of the database used in mongoDB
+      - IOTA_CB_NGSI_VERSION=v2
+
+    command: /usr/bin/tail -f /var/log/lastlog
+
+  iotage-product:
+    hostname: iotage-product
+    image: iotagent4fiware/iotagent-opcua:1.3.4
+    networks:
+      - hostnet
+      - iotnet
+    ports:
+      - "4002:4001"
+      - "4082:8080"
+    extra_hosts:
+      - "opcua_server_sps:192.168.1.10"
+    depends_on:
+      - iotmongo
+      - orion
+    volumes:
+      - ../config_product:/opt/iotagent-opcua/conf
+    environment:
+      - IOTA_REGISTRY_TYPE=memory
+      - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
+      - IOTA_MONGO_HOST=iotmongo # The host name of MongoDB
+      - IOTA_MONGO_DB=iotagent_opcua # The name of the database used in mongoDB
+      - IOTA_CB_NGSI_VERSION=v2
+
+    command: /usr/bin/tail -f /var/log/lastlog
+
+  iotage-processdata:
+    hostname: iotage-processdata
+    image: iotagent4fiware/iotagent-opcua:1.3.4
+    networks:
+      - hostnet
+      - iotnet
+    ports:
+      - "4003:4001"
+      - "4083:8080"
+    extra_hosts:
+      - "opcua_server_sps:192.168.1.10"
+    depends_on:
+      - iotmongo
+      - orion
+    volumes:
+      - ../config_processdata:/opt/iotagent-opcua/conf
     environment:
       - IOTA_REGISTRY_TYPE=memory
       - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
