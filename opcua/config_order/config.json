@@ -123,7 +123,7 @@
 		"mappings": [{
 			"ocb_id": "writeOrderstatus",
 			"opcua_id": "ns=3;s=writeOrderstaus_DB.Method",
-			"object_id": "ns=3;s=writeOrderstatus",
+			"object_id": "ns=3;s=writeOrderstaus_DB",
 			"inputArguments": [{
 				"type": "\"UAMethod_InParameters\".orderstate",
 				"datatype": 12

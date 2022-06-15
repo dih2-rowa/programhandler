@@ -93,7 +93,7 @@ fiware-servicepath: /demo
 content-type: application/json
 
 {
-   "value": [{"orderstate":"bla"}],
+   "value": [{"\"UAMethod_InParameters\".orderstate":"bla"}],
    "type": "command"
 }
 
