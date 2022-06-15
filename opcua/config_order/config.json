@@ -122,10 +122,30 @@
 		"type": "Order",
 		"mappings": [{
 			"ocb_id": "writeOrderstatus",
-			"opcua_id": "ns=3;s=\"writeOrderstatus_DB\".Method",
-			"object_id": "ns=3;s=\"writeOrderstatus_DB\"",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Method",
+			"object_id": "ns=3;s=\"FB_OPC_UA_DB\"",
 			"inputArguments": [{
 				"type": "orderstate",
+				"dataType": 12
+			},
+			{
+				"type": "orderNumber_Server",
+				"dataType": 12
+			},
+			{
+				"type": "ProgramName_Server",
+				"dataType": 12
+			},
+			{
+				"type": "programName_OnRob",
+				"dataType": 12
+			},
+			{
+				"type": "orderState_Server",
+				"dataType": 12
+			},
+			{
+				"type": "ProductID_Server",
 				"dataType": 12
 			}
 			]
