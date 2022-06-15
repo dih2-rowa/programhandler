@@ -89,7 +89,7 @@ fiware-servicepath: /demo
 content-type: application/json
 
 {
-   "value": ["success"],
+   "value": ["good","test","test2","test3","test4","test5"],
    "type": "command"
 }
 
