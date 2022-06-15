@@ -17,33 +17,48 @@ fiware-servicepath: /demo
 Content-Type: application/json
 
 {
-    "devices": [{
-      "device_id": "MyObject",
+    "devices": [
+    {
+      "device_id": "Robot1",
       "service": "robot_info",
-      "subservice" : "/demo",
-      "entity_name": "MyObject",
-      "entity_type": "MyObject",
-      "endpoint": "opc.tcp://host.docker.internal:4840/freeopcua/server/",
+      "service_path": "/demo",
+      "entity_name": "Robot1",
+      "entity_type": "Order",
+      "endpoint": "opc.tcp://192.168.1.10:4840",
       "attributes": [
         {
-          "object_id": "2:MyVariable",
-          "name": "2:MyVariable",
+          "object_id": "ProductID",
+          "name": "ProductID",
+          "type": "String"
+        },
+        {
+          "object_id": "planParts",
+          "name": "planParts",
           "type": "Number"
+        },
+        {
+          "object_id": "prodParts",
+          "name": "prodParts",
+          "type": "Number"
+        },
+        {
+          "object_id": "startTime",
+          "name": "startTime",
+          "type": "String"
+        },
+        {
+          "object_id": "finishedTime",
+          "name": "finishedTime",
+          "type": "String"
         }
       ],
       "lazy": [],
       "commands": [
         {
-          "object_id": "2:mymethod",
-          "name": "2:mymethod",
+          "object_id": "ns=3;s=\"writeOrderstatus_DB\".Method",
+          "name": "writeOrderstatus",
           "type": "command"
-        },
-        {
-          "object_id": "2:multiply",
-          "name": "2:multiply",
-          "type": "command"
-        }
-      ],
+        }],
       "static_attributes": []
     }]
 }
@@ -64,17 +79,9 @@ GET http://localhost:1026/v2/entities/MyObject/attrs/
 fiware-service: robot_info 
 fiware-servicepath: /demo
 
-### Update Entity
-PUT http://localhost:1026/v2/entities/MyObject/attrs/2:multiply?type=MyObject
-fiware-service: robot_info 
-fiware-servicepath: /demo
-content-type: application/json
-
-{
-  "value": [{"x":"1","y":"2"}],
-   "type": "command"
-}
-
+# Subscription verwenden um die Werte automatische bei einer Fiware Wert aednerung auch auf der SPS zu aendern
+# Http von der Subscription muss dann wh PUT aufruf sein (http://iotage-order:4001/op/update evtl. interesante uri fuer put (context broker log))
+# Andere Moeglichkeit waere von Programm handler gleichzeitig mit fiware update put zu context broker schreiben
 ### Update Entity Order
 PUT http://localhost:1026/v2/entities/Robot1/attrs/writeOrderstatus?type=Order
 fiware-service: robot_info 
@@ -82,18 +89,7 @@ fiware-servicepath: /demo
 content-type: application/json
 
 {
-   "value": "testi",
-   "type": "command"
-}
-
-### Update Entity Order
-PUT http://localhost:1026/v2/entities/Robot1/attrs/writeOrderstatus?type=Order
-fiware-service: robot_info 
-fiware-servicepath: /demo
-content-type: application/json
-
-{
-   "value": [{"\"UAMethod_InParameters\".orderstate":"bla"}],
+   "value": ["success"],
    "type": "command"
 }
 

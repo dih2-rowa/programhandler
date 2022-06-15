@@ -57,8 +57,8 @@
 			{
 				"name": "workingStation",
 				"type": "String"
-			}
-			],
+			}],
+			"lazy" : [ ],
 			"commands": [{
 				"name": "writeOrderstatus",
 				"type": "command"
@@ -122,11 +122,11 @@
 		"type": "Order",
 		"mappings": [{
 			"ocb_id": "writeOrderstatus",
-			"opcua_id": "ns=3;s=writeOrderstaus_DB.Method",
-			"object_id": "ns=3;s=writeOrderstaus_DB",
+			"opcua_id": "ns=3;s=\"writeOrderstatus_DB\".Method",
+			"object_id": "ns=3;s=\"writeOrderstatus_DB\"",
 			"inputArguments": [{
-				"type": "\"UAMethod_InParameters\".orderstate",
-				"datatype": 12
+				"type": "orderstate",
+				"dataType": 12
 			}
 			]
 		}]
