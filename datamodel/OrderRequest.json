@@ -1,0 +1,8 @@
+{
+    "id": "OrderReq1",
+    "type": "OrderReq",
+    "orderID": {
+      "value": "test",
+      "type": "string"
+    }
+  }
