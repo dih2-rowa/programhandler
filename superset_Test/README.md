@@ -3,6 +3,7 @@
 2. compose up docker-compose_superset
 3. http://localhost:8080/superset/welcome/
 4. Add database at superset --> crate://crate@crate-db:4200
+5. http://localhost:4200/ --> crateDB
 
 
 
