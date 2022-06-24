@@ -23,11 +23,11 @@
 		"retryTime": 5
 	},
 	"types": {
-		"OrderReq": {
+		"VersionReq": {
 			"service": "robot_info",
 			"subservice": "/demo",
 			"active": [ {
-					"name": "orderID",
+					"name": "productID",
 					"type": "String"
 				}
 			],
@@ -38,21 +38,21 @@
 	"browseServerOptions": null,
 	"service": "robot_info",
 	"subservice": "/demo",
-	"providerUrl": "http://iotage-orderreq:4001",
+	"providerUrl": "http://iotage-versionreq:4001",
 	"pollingExpiration": "200000",
 	"pollingDaemonFrequency": "20000",
 	"deviceRegistrationDuration": "P1M",
 	"defaultType": null,
 	"contexts": [
 	{
-		"id": "OrderReq1",
-		"type": "OrderReq",
+		"id": "VersionReq1",
+		"type": "VersionReq",
 		"service": "robot_info",
 		"subservice": "/demo",
 		"polling": false,
 		"mappings": [{
-			"ocb_id": "orderID",
-			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".orderNumber_Request",
+			"ocb_id": "productID",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Version_Request",
 			"object_id": null,
 			"inputArguments": []
 		}]

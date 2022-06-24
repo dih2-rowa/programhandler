@@ -1,0 +1,8 @@
+{
+  "id": "VersionReq1",
+  "type": "VersionReq",
+  "productID": {
+    "value": "blasius1",
+    "type": "string"
+  }
+}

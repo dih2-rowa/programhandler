@@ -1,8 +1,0 @@
-{
-    "id": "RPHS_RPHC1",
-    "type": "RPHS_API",
-    "request": {
-      "method": "POST",
-      "url": "blasius1.src"
-    }
-  }
