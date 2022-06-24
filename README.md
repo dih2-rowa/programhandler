@@ -15,6 +15,7 @@ The Robot Program Handler was developed as part of the Robosonic Project (Part o
 ## Architecture
 
 ![image](https://user-images.githubusercontent.com/102011176/175538885-b4075792-d118-4fd6-a442-2d5165abc9a8.png)
+
 *The whole picture shows the scope of the entire Robosonic project. The red square shows the components of the Robot Program Handler.*
 
 Basically, the Program Handler consists of 3 software components:
