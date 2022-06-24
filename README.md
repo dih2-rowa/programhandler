@@ -10,11 +10,13 @@ The control takes place via Orion Context Broker (OCB).
   - program status compariso between robot and file server
 
 ## Overview
-The Program Handler application is developed during the 2nd [DIH²](http://www.dih-squared.eu/) funding project. Developed by [RoWa Automation GmBh](https://www.rowa-automation.at/)
+The Robot Program Handler was developed as part of the Robosonic Project (Part of the 2nd [DIH²](http://www.dih-squared.eu/) funding project). Developed by [RoWa Automation GmBh](https://www.rowa-automation.at/)
 
 ## Architecture
 
-![image](https://user-images.githubusercontent.com/102011176/175516601-b5d3224b-77b2-4094-8b92-57606903c448.png)
+![image](https://user-images.githubusercontent.com/102011176/175538885-b4075792-d118-4fd6-a442-2d5165abc9a8.png)
+
+*The whole picture shows the scope of the entire Robosonic project. The red square shows the components of the Robot Program Handler.*
 
 Basically, the Program Handler consists of 3 software components:
   - Robot Program Handler - Server
