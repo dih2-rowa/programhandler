@@ -2,32 +2,16 @@
 
 ## Purpose
 The program handler can be used for the external exchange of robot programs (KUKA). 
-The control takes place via Orion Conteyt Broker (OCB).
+The control takes place via Orion Context Broker (OCB).
 
+### Features
 
-```text
+  - program transfer due to OCB request from file server to robot
+  - program transfer due to OCB request from robot to file server
+  - program status compariso between robot and file server
 
-The Badges above demonstrate testing, code coverage
-and commitment to coding standards (since the code is linted on commit).
-
-The links need to be amended to point to the correct repo.
-
-Sign up for:
-
-- CI Test system - e.g. GitHub Actions, Travis
-- A Documentation website - e.g. ReadTheDocs
-- Static Code Analysis tool - e.g. Codacy
-- CII Best Practices https://bestpractices.coreinfrastructure.org
-
-Only CII Best Practices (and its badge) is mandatory. Any equivalent public automated tools for the other three may be used.
-
-Note that the CII Best Practices questionaire will request evidence of tooling used.
-
-```
-
-```text
-One or two sentence preamble describing the element
-```
+## Overview
+The Program Handler application is developed during the 2nd [DIH²](http://www.dih-squared.eu/) funding project. Developed by [RoWa Automation GmBh](https://www.rowa-automation.at/)
 
 <!--- ## Contents
 
