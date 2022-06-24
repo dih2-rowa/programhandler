@@ -41,6 +41,7 @@ The file server is used to make robot programs available to several processing c
 ## Environment Restrictions
 
 ## Known Limitations
+At the moment only can be used with KUKA robots.
 
 ## Improvements Backlog
 
