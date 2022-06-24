@@ -13,17 +13,15 @@ The control takes place via Orion Context Broker (OCB).
 ## Overview
 The Program Handler application is developed during the 2nd [DIH²](http://www.dih-squared.eu/) funding project. Developed by [RoWa Automation GmBh](https://www.rowa-automation.at/)
 
-<!--- ## Contents
+## Architecture
 
-- [<TITLE>](#title)
-  - [Contents](#contents)
-  - [Background](#background)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [API](#api)
-  - [Testing](#testing)
-  - [License](#license)
--->
+![image](https://user-images.githubusercontent.com/102011176/175516601-b5d3224b-77b2-4094-8b92-57606903c448.png)
+
+Basically, the Program Handler consists of 3 software components:
+
+  - Robot Program Handler - Server
+  - Robot Program Handler - Client
+  - File Server
 
 ## Test NGSI V2 API with VS code and docker desktop
 ### VScode Extensions used
