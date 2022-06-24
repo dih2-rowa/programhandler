@@ -5,7 +5,6 @@ The program handler can be used for the external exchange of robot programs (KUK
 The control takes place via Orion Context Broker (OCB).
 
 ### Features
-
   - program transfer due to OCB request from file server to robot
   - program transfer due to OCB request from robot to file server
   - program status compariso between robot and file server
@@ -32,6 +31,32 @@ The interface to the OCB was realised via a specially developed API. The communi
 
 ### File Server
 The file server is used to make robot programs available to several processing centres.
+
+## How to adapt it?
+
+## How to deploy it?
+
+## How to use it?
+
+## Environment Restrictions
+
+## Known Limitations
+
+## Improvements Backlog
+
+## License
+Provided under various open source licenses (mainly [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html) and [MIT](http://opensource.org/licenses/MIT)). Third-party libraries or application servers included are distributed under their respective licenses. Full list including optional dependencies can be found on [Camunda - Third party libraries](https://docs.camunda.org/manual/7.15/introduction/third-party-libraries/).
+
+
+
+
+
+
+
+
+
+
+
 
 ## Test NGSI V2 API with VS code and docker desktop
 ### VScode Extensions used
