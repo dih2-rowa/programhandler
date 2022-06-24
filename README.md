@@ -1,13 +1,13 @@
 # Robot Program Handler
 
 ## Purpose
-The program handler can be used for the external exchange of robot programs (KUKA). 
+The Robot Program Handler can be used for the external exchange of robot programs (KUKA). 
 The control takes place via Orion Context Broker (OCB).
 
 ### Features
-  - program transfer due to OCB request from file server to robot
-  - program transfer due to OCB request from robot to file server
-  - program status compariso between robot and file server
+  - robot program transfer due to OCB request from file server to robot
+  - robot program transfer due to OCB request from robot to file server
+  - robot program status comparison between robot and file server
 
 ## Overview
 The Robot Program Handler was developed as part of the Robosonic Project (Part of the 2nd [DIH²](http://www.dih-squared.eu/) funding project). Developed by [RoWa Automation GmBh](https://www.rowa-automation.at/)
