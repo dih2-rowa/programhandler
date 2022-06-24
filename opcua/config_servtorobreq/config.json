@@ -23,7 +23,7 @@
 		"retryTime": 5
 	},
 	"types": {
-		"VersionReq": {
+		"ServToRobReq": {
 			"service": "robot_info",
 			"subservice": "/demo",
 			"active": [ {
