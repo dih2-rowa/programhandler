@@ -54,7 +54,7 @@ Content-Type: application/json
 
 
 ### IOT entities
-GET http://localhost:4001/iot/devices/
+GET http://localhost:4007/iot/devices/
 fiware-service: robot_info
 fiware-servicepath: /demo
 
@@ -151,7 +151,7 @@ fiware-servicepath: /demo
     },
     "notification": {
         "http": {
-            "url": "http://quantumleap:8668/v2/notify"
+            "url": "http://pythonapplication1:5011/notification/versionOnRobot"
         },
         "attrs": [],
         "metadata": ["dateCreated", "dateModified"]
