@@ -27,8 +27,11 @@ Is a software written in C# that is based on the OpenSource [C3bridge-server](ht
 The software itself has to be installed directly on the robot and .here it takes over the functions for sending and receiving robot programs.
 
 ### Robot Program Handler - Client
+The robot program handler - client serves as a communication bridge between the individual components.
+The interface to the OCB was realised via a specially developed API. The communication between client and server is done over TCP/IP. Furthermore, the client takes over the program transfer between file server and robot.
 
 ### File Server
+The file server is used to make robot programs available to several processing centres.
 
 ## Test NGSI V2 API with VS code and docker desktop
 ### VScode Extensions used
