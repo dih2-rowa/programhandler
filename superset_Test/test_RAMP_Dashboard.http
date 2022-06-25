@@ -41,6 +41,11 @@ fiware-servicepath: /demo
   }
 }
 
+### Delete
+Delete http://localhost:1026/v2/entities/Robot1/
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
 
 ### check entity
 GET http://localhost:1026/v2/entities

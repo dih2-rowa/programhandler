@@ -1,0 +1,905 @@
+### Add subscription for processdata
+POST http://localhost:1026/v2/subscriptions
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+    "description": "Processdata",
+    "subject": {
+        "entities": [
+        {
+            "idPattern": ".*",
+            "type": "Processdata"
+        }
+        ],
+        "condition": {
+            "attrs": [] 
+            //Subscription valid for all attributes
+        }
+    },
+    "notification": {
+        "http": {
+            "url": "http://quantumleap:8668/v2/notify"
+        },
+        "attrs": [],
+        "metadata": ["dateCreated", "dateModified"]
+    }
+}
+
+### Add subscription for order
+POST http://localhost:1026/v2/subscriptions
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+    "description": "Order",
+    "subject": {
+        "entities": [
+        {
+            "idPattern": ".*",
+            "type": "Order"
+        }
+        ],
+        "condition": {
+            "attrs": [] 
+            //Subscription valid for all attributes
+        }
+    },
+    "notification": {
+        "http": {
+            "url": "http://quantumleap:8668/v2/notify"
+        },
+        "attrs": [],
+        "metadata": ["dateCreated", "dateModified"]
+    }
+}
+
+### Add subscription for product
+POST http://localhost:1026/v2/subscriptions
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+    "description": "Product",
+    "subject": {
+        "entities": [
+        {
+            "idPattern": ".*",
+            "type": "Product"
+        }
+        ],
+        "condition": {
+            "attrs": [] 
+            //Subscription valid for all attributes
+        }
+    },
+    "notification": {
+        "http": {
+            "url": "http://quantumleap:8668/v2/notify"
+        },
+        "attrs": [],
+        "metadata": ["dateCreated", "dateModified"]
+    }
+}
+
+
+####################
+### Products
+####################
+
+
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+  "id": "MY83-9G920",
+  "type": "Product",
+  "programName": {
+    "value": "MY83-9G920.src",
+    "type": "String"
+  },
+  "programVersion": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "versionOnRobot": {
+      "value": true,
+      "type": "Boolean"
+  },
+  "processingLength": {
+    "value": 758,
+    "type": "Integer"
+  },
+  "planCycleTime": {
+    "value": 84,
+    "type": "Integer"
+  }
+}
+
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+  "id": "MY83-9G921",
+  "type": "Product",
+  "programName": {
+    "value": "MY83-9G921.src",
+    "type": "String"
+  },
+  "programVersion": {
+    "value": 3,
+    "type": "Integer"
+  },
+  "versionOnRobot": {
+      "value": false,
+      "type": "Boolean"
+  },
+  "processingLength": {
+    "value": 789,
+    "type": "Integer"
+  },
+  "planCycleTime": {
+    "value": 90,
+    "type": "Integer"
+  }
+}
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+  "id": "MY83-014K96",
+  "type": "Product",
+  "programName": {
+    "value": "MY83-014K96.src",
+    "type": "String"
+  },
+  "programVersion": {
+    "value": 1,
+    "type": "Integer"
+  },
+  "versionOnRobot": {
+      "value": true,
+      "type": "Boolean"
+  },
+  "processingLength": {
+    "value": 337,
+    "type": "Integer"
+  },
+  "planCycleTime": {
+    "value": 41,
+    "type": "Integer"
+  }
+}
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+  "id": "MY83-014K97",
+  "type": "Product",
+  "programName": {
+    "value": "MY83-014K97.src",
+    "type": "String"
+  },
+  "programVersion": {
+    "value": 5,
+    "type": "Integer"
+  },
+  "versionOnRobot": {
+      "value": true,
+      "type": "Boolean"
+  },
+  "processingLength": {
+    "value": 340,
+    "type": "Integer"
+  },
+  "planCycleTime": {
+    "value": 42,
+    "type": "Integer"
+  }
+}
+
+####################
+### Orders
+####################
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+    "id": "ON000542",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-9G920",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 1000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 1000,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2022-06-19 07:08:35",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2022-06-19 15:37:22",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-26 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Finished",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+    "id": "ON000543",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-9G920",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2022-06-12 17:01:10",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2022-06-26 17:00:12",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-26 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Finished",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+    "id": "ON000544",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-9G920",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 1987,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2022-06-24 12:17:55",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "1899-01-01 00:00:00",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-26 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Running",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+    "id": "ON000545",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-9G920",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 7000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 0,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "1899-01-01 00:00:00",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "1899-01-01 00:00:00",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-26 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Open",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+    "id": "ON000546",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-9G920",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 8000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 0,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "1899-01-01 00:00:00",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "1899-01-01 00:00:00",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-26 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Open",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+    "id": "ON000611",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-9G921",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 2000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 2000,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2022-06-17 13:01:01",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2022-06-18 16:25:46",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-26 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Finished",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+    "id": "ON000613",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-9G921",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 11100,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 11100,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2022-06-20 09:12:34",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2022-06-21 08:56:10",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-26 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Finished",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+    "id": "ON000718",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-9G921",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2017-06-10 13:14:12",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2022-06-12 17:17:12",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-12 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Finished",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+{
+    "id": "ON001002",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-014K96",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 12000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 0,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "1899-01-01 00:00:00",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "1899-01-01 00:00:00",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-12 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Open",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+    "id": "ON001358",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-014K96",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 5000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 5000,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2022-06-11 12:00:00",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2022-06-12 12:17:55",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-12 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Finished",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+    {
+    "id": "ON001356",
+    "type": "Order",
+    "productID": {
+      "value": "MY83-014K97",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 8000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 8000,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2022-06-18 12:17:55",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2022-06-19 11:25:20",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-08-19 12:17:55",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Finished",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
+
+
+### Entity creation
+POST http://localhost:1026/v2/entities/
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+  "id": "Robot1",
+  "type": "Processdata",
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 83,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Processed part", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 306000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000544",
+    "type": "String"
+  }
+}
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 84,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Empty", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 3006000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000544",
+    "type": "String"
+  }
+}
+
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": false,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 84,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Processed part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Empty", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 305000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000544",
+    "type": "String"
+  }
+}
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 80,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Empty",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Raw part", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 304000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000544",
+    "type": "String"
+  }
+}
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+  {
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 82,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Processed part", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 303000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000544",
+    "type": "String"
+  }
+}
+
