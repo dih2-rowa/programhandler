@@ -199,7 +199,7 @@
         "type": "Datetime"
     },
     "finishedTime": {
-      "value": "",
+      "value": "1899-01-01 00:00:00",
       "type": "Datetime"
     },
     "deadline": {
@@ -232,11 +232,11 @@
       "type": "Integer"
     },
     "startTime": {
-        "value": "",
+        "value": "1899-01-01 00:00:00",
         "type": "Datetime"
     },
     "finishedTime": {
-      "value": "",
+      "value": "1899-01-01 00:00:00",
       "type": "Datetime"
     },
     "deadline": {
@@ -269,11 +269,11 @@
       "type": "Integer"
     },
     "startTime": {
-        "value": "",
+        "value": "1899-01-01 00:00:00",
         "type": "Datetime"
     },
     "finishedTime": {
-      "value": "",
+      "value": "1899-01-01 00:00:00",
       "type": "Datetime"
     },
     "deadline": {
@@ -417,11 +417,11 @@
       "type": "Integer"
     },
     "startTime": {
-        "value": "",
+        "value": "1899-01-01 00:00:00",
         "type": "Datetime"
     },
     "finishedTime": {
-      "value": "",
+      "value": "1899-01-01 00:00:00",
       "type": "Datetime"
     },
     "deadline": {
