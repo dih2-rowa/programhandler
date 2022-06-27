@@ -1,7 +1,7 @@
 ### Add subscription for processdata
 POST http://localhost:1026/v2/subscriptions
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -30,7 +30,7 @@ fiware-servicepath: /demo
 ### Add subscription for order
 POST http://localhost:1026/v2/subscriptions
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -59,7 +59,7 @@ fiware-servicepath: /demo
 ### Add subscription for product
 POST http://localhost:1026/v2/subscriptions
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -95,7 +95,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -127,7 +127,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -158,7 +158,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -189,7 +189,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -224,7 +224,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -240,6 +240,10 @@ fiware-servicepath: /demo
     },
     "prodParts": {
       "value": 1000,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 988,
       "type": "Integer"
     },
     "startTime": {
@@ -267,7 +271,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -283,6 +287,10 @@ fiware-servicepath: /demo
     },
     "prodParts": {
       "value": 10000,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 9600,
       "type": "Integer"
     },
     "startTime": {
@@ -310,7 +318,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -353,7 +361,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -396,7 +404,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -439,7 +447,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -455,6 +463,10 @@ fiware-servicepath: /demo
     },
     "prodParts": {
       "value": 2000,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 1985,
       "type": "Integer"
     },
     "startTime": {
@@ -482,7 +494,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -498,6 +510,10 @@ fiware-servicepath: /demo
     },
     "prodParts": {
       "value": 11100,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 11037,
       "type": "Integer"
     },
     "startTime": {
@@ -525,7 +541,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -541,6 +557,10 @@ fiware-servicepath: /demo
     },
     "prodParts": {
       "value": 10000,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 9725,
       "type": "Integer"
     },
     "startTime": {
@@ -568,7 +588,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
@@ -611,7 +631,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -627,6 +647,10 @@ fiware-servicepath: /demo
     },
     "prodParts": {
       "value": 5000,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 4879,
       "type": "Integer"
     },
     "startTime": {
@@ -654,7 +678,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
     {
@@ -670,6 +694,10 @@ fiware-servicepath: /demo
     },
     "prodParts": {
       "value": 8000,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 7423,
       "type": "Integer"
     },
     "startTime": {
@@ -698,7 +726,7 @@ fiware-servicepath: /demo
 ### Entity creation
 POST http://localhost:1026/v2/entities/
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -741,7 +769,7 @@ fiware-servicepath: /demo
 ### Entity creation
 PATCH  http://localhost:1026/v2/entities/Robot1/attrs
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -783,7 +811,7 @@ fiware-servicepath: /demo
 ### Entity creation
 PATCH  http://localhost:1026/v2/entities/Robot1/attrs
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -824,7 +852,7 @@ fiware-servicepath: /demo
 ### Entity creation
 PATCH  http://localhost:1026/v2/entities/Robot1/attrs
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {
@@ -865,7 +893,7 @@ fiware-servicepath: /demo
 ### Entity creation
 PATCH  http://localhost:1026/v2/entities/Robot1/attrs
 content-type: application/json
-fiware-service: opcua_car
+fiware-service: robot_info
 fiware-servicepath: /demo
 
   {

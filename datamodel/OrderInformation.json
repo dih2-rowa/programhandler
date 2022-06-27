@@ -13,6 +13,10 @@
       "value": 1987,
       "type": "Integer"
     },
+    "prodPartsIO": {
+      "value": 1985,
+      "type": "Integer"
+    },
     "startTime": {
         "value": "2017-08-19 12:17:55",
         "type": "Datetime"
