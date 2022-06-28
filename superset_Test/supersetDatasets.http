@@ -102,7 +102,7 @@ fiware-servicepath: /demo
   "id": "MY83-9G920",
   "type": "Product",
   "programName": {
-    "value": "MY83-9G920.src",
+    "value": "MY83-9G920",
     "type": "String"
   },
   "programVersion": {
@@ -134,7 +134,7 @@ fiware-servicepath: /demo
   "id": "MY83-9G921",
   "type": "Product",
   "programName": {
-    "value": "MY83-9G921.src",
+    "value": "MY83-9G921",
     "type": "String"
   },
   "programVersion": {
@@ -165,7 +165,7 @@ fiware-servicepath: /demo
   "id": "MY83-014K96",
   "type": "Product",
   "programName": {
-    "value": "MY83-014K96.src",
+    "value": "MY83-014K96",
     "type": "String"
   },
   "programVersion": {
@@ -196,7 +196,7 @@ fiware-servicepath: /demo
   "id": "MY83-014K97",
   "type": "Product",
   "programName": {
-    "value": "MY83-014K97.src",
+    "value": "MY83-014K97",
     "type": "String"
   },
   "programVersion": {
@@ -722,6 +722,12 @@ fiware-servicepath: /demo
     }
   }
 
+########################
+### Processdata
+########################
+
+
+
 
 ### Entity creation
 POST http://localhost:1026/v2/entities/
@@ -927,6 +933,215 @@ fiware-servicepath: /demo
   },
     "orderID": {
     "value": "ON000543",
+    "type": "String"
+  }
+}
+
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: robot_info
+fiware-servicepath: /demo
+
+  {
+  "id": "Robot1",
+  "type": "Processdata",
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 96,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Processed part", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 306000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000611",
+    "type": "String"
+  }
+}
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: robot_info
+fiware-servicepath: /demo
+
+  {
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 89,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Empty", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 3006000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000611",
+    "type": "String"
+  }
+}
+
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: robot_info
+fiware-servicepath: /demo
+
+  {
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": false,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 92,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Processed part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Empty", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 305000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000611",
+    "type": "String"
+  }
+}
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: robot_info
+fiware-servicepath: /demo
+
+  {
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 89,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Empty",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Raw part", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 304000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000611",
+    "type": "String"
+  }
+}
+
+### Entity creation
+PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+content-type: application/json
+fiware-service: robot_info
+fiware-servicepath: /demo
+
+  {
+  "version": {
+    "value": 2,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Processed part", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 303000,
+    "type": "Integer"
+  },
+    "orderID": {
+    "value": "ON000611",
     "type": "String"
   }
 }

@@ -141,14 +141,6 @@
 				"dataType": 12
 			},
 			{
-				"type": "programName_OnRob",
-				"dataType": 12
-			},
-			{
-				"type": "orderState_Server",
-				"dataType": 12
-			},
-			{
 				"type": "ProductID_Server",
 				"dataType": 12
 			},
