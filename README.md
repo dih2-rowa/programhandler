@@ -41,25 +41,50 @@ First of all, it is neccesary, to know, what IP address Robot Controler has. Thi
 Then it is necessary to open Port 7000 in controller (Menu -> Start-up->  Network Configuration -> Advanced -> NAT -> Add Port) with permitted protocols "tcp/udp". After it, cold start with files reload must be performed. 
 
 In Rowa Console Client, in ProgramID.cs, ID number must be adjusted to actual state:
-![image](https://user-images.githubusercontent.com/103100980/176119269-fa046985-462c-471a-94c8-372199f61106.png)
+![image](https://user-images.githubusercontent.com/103100980/176121197-adb4f0c9-a16f-4823-9095-ab5ef7c691a0.png)
+
 
 For checking a program, correct folder must be chosen:
+ 
 ![image](https://user-images.githubusercontent.com/103100980/176119800-0a3bd262-6ac8-4aae-ac2e-5d425a762ca6.png)
 
 
 For downloading and uploading programms, correct directory must be chosen: 
 ![image](https://user-images.githubusercontent.com/103100980/176120621-a4be2c46-2ed6-431a-8907-a731844823b3.png)
 
-Every different file, is also to change and must have correct directory. 
+Every different file must have correct directory. 
 
 ## How to deploy it?
 
+For using a software, it is required to have docker compose and Visual Studio Code already installed on computer.
+
+Program C3Server should be copied to robot and started - if wished, it can be moved to autostart. 
+
+Code shall be copied to place, where program handler is supposed to work. 
+
+Next step is to Compose Docker file. For it, file docker-compose_OPC_UA.yml must be find in Visual Studio code:
+
+![image](https://user-images.githubusercontent.com/103100980/176124517-64a00eeb-b499-4260-939b-a631f063b7cf.png)
+
+and with right mouse button, choose an option Compose Up - Disclaimer: Docker must be active. 
+
+In case, there is problem with restarting any of container, there are two way to go on Windows: 
+1. Ubuntu for Windows must be installed
+2a. Write a command -> wsl -d docker-desktop sysctl -w vm.max_map_count=262144 <- in Powershell
+2b. Or :
+- Set vm.max_map_count=262144 in /etc/sysctl.conf
+- Apply with sudo sysctl -p
+
 ## How to use it?
+
+After adapting and deploying it, program is supposed to be able to recive any wished order information directly on HMI and download/update programs from/to file server only by ordering it on HMI. 
+
+HMI should be prepared for operator, the way, that involved people can freely use it. 
 
 ## Environment Restrictions
 
 ## Known Limitations
-At the moment only can be used with KUKA robots.
+At the moment only can be used with KUKA KRC4 robots. 
 
 ## Improvements Backlog
 
