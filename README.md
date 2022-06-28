@@ -40,8 +40,17 @@ This software is working only with Kuka KRC4 robot, with operation system Window
 First of all, it is neccesary, to know, what IP address Robot Controler has. This can be find directly in Kuka Teach Panel in (Manu -> Stat-up -> Network Configuration).
 Then it is necessary to open Port 7000 in controller (Menu -> Start-up->  Network Configuration -> Advanced -> NAT -> Add Port) with permitted protocols "tcp/udp". After it, cold start with files reload must be performed. 
 
-In Rowa Console Client, in ProgramID.cs, 
+In Rowa Console Client, in ProgramID.cs, ID number must be adjusted to actual state:
+![image](https://user-images.githubusercontent.com/103100980/176119269-fa046985-462c-471a-94c8-372199f61106.png)
 
+For checking a program, correct folder must be chosen:
+![image](https://user-images.githubusercontent.com/103100980/176119800-0a3bd262-6ac8-4aae-ac2e-5d425a762ca6.png)
+
+
+For downloading and uploading programms, correct directory must be chosen: 
+![image](https://user-images.githubusercontent.com/103100980/176120621-a4be2c46-2ed6-431a-8907-a731844823b3.png)
+
+Every different file, is also to change and must have correct directory. 
 
 ## How to deploy it?
 
