@@ -36,6 +36,13 @@ The file server is used to make robot programs available to several processing c
 
 ## How to adapt it?
 
+This software is working only with Kuka KRC4 robot, with operation system Windows XP or higher. 
+First of all, it is neccesary, to know, what IP address Robot Controler has. This can be find directly in Kuka Teach Panel in (Manu -> Stat-up -> Network Configuration).
+Then it is necessary to open Port 7000 in controller (Menu -> Start-up->  Network Configuration -> Advanced -> NAT -> Add Port) with permitted protocols "tcp/udp". After it, cold start with files reload must be performed. 
+
+In Rowa Console Client, in ProgramID.cs, 
+
+
 ## How to deploy it?
 
 ## How to use it?
