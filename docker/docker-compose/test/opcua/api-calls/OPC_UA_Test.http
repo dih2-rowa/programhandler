@@ -10,6 +10,12 @@ GET http://localhost:4001/iot/devices
 fiware-service: opcua 
 fiware-servicepath: /test
 
+## OPC UA Client
+###
+GET http://localhost:4001/iot/devices
+fiware-service: opcua 
+fiware-servicepath: /test
+
 ###
 POST http://localhost:4001/iot/devices
 fiware-service: opcua
@@ -64,17 +70,6 @@ GET http://localhost:1026/v2/entities/MyObject/attrs/
 fiware-service: opcua 
 fiware-servicepath: /test
 
-### Update Entity
-PUT http://localhost:1026/v2/entities/MyObject/attrs/2:multiply?type=MyObject
-fiware-service: opcua 
-fiware-servicepath: /test
-content-type: application/json
-
-{
-  "value": [{"x":"1","y":"2"}],
-   "type": "command"
-}
-
 ### Update Entity CAR
 PUT http://localhost:1026/v2/entities/MyObject/attrs/2:multiply?type=MyObject
 fiware-service: opcua 
@@ -82,7 +77,7 @@ fiware-servicepath: /test
 content-type: application/json
 
 {
-   "value": [1,4],
+  "value": [1,4],
   "type": "command"
 }
 

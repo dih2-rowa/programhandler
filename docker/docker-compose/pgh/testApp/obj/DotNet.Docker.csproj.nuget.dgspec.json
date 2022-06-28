@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/app/DotNet.Docker.csproj": {}
+    "/workspaces/programmhandler/docker/docker-compose/pgh/testApp/DotNet.Docker.csproj": {}
   },
   "projects": {
-    "/app/DotNet.Docker.csproj": {
+    "/workspaces/programmhandler/docker/docker-compose/pgh/testApp/DotNet.Docker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/app/DotNet.Docker.csproj",
+        "projectUniqueName": "/workspaces/programmhandler/docker/docker-compose/pgh/testApp/DotNet.Docker.csproj",
         "projectName": "DotNet.Docker",
-        "projectPath": "/app/DotNet.Docker.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/app/obj/",
+        "projectPath": "/workspaces/programmhandler/docker/docker-compose/pgh/testApp/DotNet.Docker.csproj",
+        "packagesPath": "/home/vscode/.nuget/packages/",
+        "outputPath": "/workspaces/programmhandler/docker/docker-compose/pgh/testApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/home/vscode/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

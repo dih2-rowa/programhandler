@@ -1,0 +1,11 @@
+### 
+GET http://localhost:5013/api/superhero/4
+
+### Create one
+POST http://localhost:5013/api/superhero
+Content-Type: application/json
+
+{
+    "id": 4,
+    "name": "FlashGordon"
+}
