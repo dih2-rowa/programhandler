@@ -761,7 +761,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
     "orderID": {
-    "value": "ON000544",
+    "value": "ON000543",
     "type": "String"
   }
 }
@@ -786,7 +786,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
   "currCycleTime": {
-    "value": 84,
+    "value": 89,
     "type": "Integer"
   },
   "drawer1Status": {
@@ -802,7 +802,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
     "orderID": {
-    "value": "ON000544",
+    "value": "ON000543",
     "type": "String"
   }
 }
@@ -828,7 +828,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
   "currCycleTime": {
-    "value": 84,
+    "value": 88,
     "type": "Integer"
   },
   "drawer1Status": {
@@ -844,7 +844,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
     "orderID": {
-    "value": "ON000544",
+    "value": "ON000543",
     "type": "String"
   }
 }
@@ -869,7 +869,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
   "currCycleTime": {
-    "value": 80,
+    "value": 87,
     "type": "Integer"
   },
   "drawer1Status": {
@@ -885,7 +885,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
     "orderID": {
-    "value": "ON000544",
+    "value": "ON000543",
     "type": "String"
   }
 }
@@ -910,7 +910,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
   "currCycleTime": {
-    "value": 82,
+    "value": 86,
     "type": "Integer"
   },
   "drawer1Status": {
@@ -926,7 +926,7 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
     "orderID": {
-    "value": "ON000544",
+    "value": "ON000543",
     "type": "String"
   }
 }
