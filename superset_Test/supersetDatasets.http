@@ -120,6 +120,10 @@ fiware-servicepath: /demo
   "planCycleTime": {
     "value": 84,
     "type": "Integer"
+  },
+  "pdf": {
+    "value": "NameDerPDF.pdf",
+    "type": "String"
   }
 }
 
@@ -152,6 +156,10 @@ fiware-servicepath: /demo
   "planCycleTime": {
     "value": 90,
     "type": "Integer"
+  },
+  "pdf": {
+    "value": "NameDerPDF.pdf",
+    "type": "String"
   }
 }
 
@@ -183,6 +191,10 @@ fiware-servicepath: /demo
   "planCycleTime": {
     "value": 41,
     "type": "Integer"
+  },
+  "pdf": {
+    "value": "NameDerPDF.pdf",
+    "type": "String"
   }
 }
 
@@ -214,6 +226,10 @@ fiware-servicepath: /demo
   "planCycleTime": {
     "value": 42,
     "type": "Integer"
+  },
+  "pdf": {
+    "value": "NameDerPDF.pdf",
+    "type": "String"
   }
 }
 
@@ -1146,3 +1162,44 @@ fiware-servicepath: /demo
   }
 }
 
+
+### Entity creation
+PUT  http://localhost:1026/v2/entities/ON000544/attrs
+content-type: application/json
+fiware-service: robot_info
+fiware-servicepath: /demo
+
+  {
+    "productID": {
+      "value": "MY83-9G920",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2022-06-24 12:17:55",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "1899-01-01 00:00:00",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2022-06-26 18:00:00",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Running",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }
