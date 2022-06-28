@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tCptSs1T5uxIzL/cIOw+ep9kzNHqWn53QOZff7PzZuI=",
+  "Source": "Fiware",
+  "BasePath": "_content/Fiware",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
