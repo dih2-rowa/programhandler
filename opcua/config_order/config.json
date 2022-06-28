@@ -39,6 +39,10 @@
 				"type": "Number"
 			},
 			{
+				"name": "prodPartsIO",
+				"type": "Number"
+			},
+			{
 				"name": "startTime",
 				"type": "String"
 			},
@@ -64,7 +68,7 @@
 				"type": "command"
 			}]
 		}
-	},
+	}, 
 	"browseServerOptions": null,
 	"service": "robot_info",
 	"subservice": "/demo",
@@ -147,6 +151,18 @@
 			{
 				"type": "ProductID_Server",
 				"dataType": 12
+			},
+			{
+				"type": "versionOnRobot",
+				"dataType": 5
+			},
+			{
+				"type": "planCycleTime",
+				"dataType": 5
+			},
+			{
+				"type": "plannedParts",
+				"dataType": 5
 			}
 			]
 		}]
