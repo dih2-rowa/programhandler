@@ -27,7 +27,7 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config_order:/opt/iotagent-opcua/conf
+      - ./opcua/config_order:/opt/iotagent-opcua/conf
     environment:
       - IOTA_REGISTRY_TYPE=memory
       - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
@@ -52,7 +52,7 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config_processdata:/opt/iotagent-opcua/conf
+      - ./opcua/config_processdata:/opt/iotagent-opcua/conf
     environment:
       - IOTA_REGISTRY_TYPE=memory
       - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
@@ -77,7 +77,7 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config_product:/opt/iotagent-opcua/conf
+      - ./opcua/config_product:/opt/iotagent-opcua/conf
     environment:
       - IOTA_REGISTRY_TYPE=memory
       - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
@@ -102,7 +102,7 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config_versionreq:/opt/iotagent-opcua/conf
+      - ./opcua/config_versionreq:/opt/iotagent-opcua/conf
     environment:
       - IOTA_REGISTRY_TYPE=memory
       - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
@@ -127,7 +127,7 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config_robtoservreq:/opt/iotagent-opcua/conf
+      - ./opcua/config_robtoservreq:/opt/iotagent-opcua/conf
     environment:
       - IOTA_REGISTRY_TYPE=memory
       - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
@@ -152,7 +152,7 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config_servtorobreq:/opt/iotagent-opcua/conf
+      - ./opcua/config_servtorobreq:/opt/iotagent-opcua/conf
     environment:
       - IOTA_REGISTRY_TYPE=memory
       - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
@@ -177,7 +177,7 @@ services:
       - iotmongo
       - orion
     volumes:
-      - ../config_orderreq:/opt/iotagent-opcua/conf
+      - ./opcua/config_orderreq:/opt/iotagent-opcua/conf
     environment:
       - IOTA_REGISTRY_TYPE=memory
       - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
