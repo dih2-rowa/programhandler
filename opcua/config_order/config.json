@@ -133,16 +133,16 @@
 				"dataType": 12
 			},
 			{
-				"type": "orderNumber_Server",
-				"dataType": 12
-			},
-			{
 				"type": "ProgramName_Server",
 				"dataType": 12
 			},
 			{
 				"type": "ProductID_Server",
 				"dataType": 12
+			},
+			{
+				"type": "programVersion_Server",
+				"dataType": 5
 			},
 			{
 				"type": "versionOnRobot",

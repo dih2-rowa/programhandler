@@ -99,10 +99,10 @@ fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
-  "id": "MY83-9G920",
+  "id": "MY83_9G920",
   "type": "Product",
   "programName": {
-    "value": "MY83-9G920",
+    "value": "MY83_9G920",
     "type": "String"
   },
   "programVersion": {
@@ -131,10 +131,10 @@ fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
-  "id": "MY83-9G921",
+  "id": "MY83_9G921",
   "type": "Product",
   "programName": {
-    "value": "MY83-9G921",
+    "value": "MY83_9G921",
     "type": "String"
   },
   "programVersion": {
@@ -162,10 +162,10 @@ fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
-  "id": "MY83-014K96",
+  "id": "MY83_014K96",
   "type": "Product",
   "programName": {
-    "value": "MY83-014K96",
+    "value": "MY83_014K96",
     "type": "String"
   },
   "programVersion": {
@@ -193,10 +193,10 @@ fiware-service: robot_info
 fiware-servicepath: /demo
 
 {
-  "id": "MY83-014K97",
+  "id": "MY83_014K97",
   "type": "Product",
   "programName": {
-    "value": "MY83-014K97",
+    "value": "MY83_014K97",
     "type": "String"
   },
   "programVersion": {
@@ -231,7 +231,7 @@ fiware-servicepath: /demo
     "id": "ON000542",
     "type": "Order",
     "productID": {
-      "value": "MY83-9G920",
+      "value": "MY83_9G920",
       "type": "String"
     },
     "planParts": {
@@ -278,7 +278,7 @@ fiware-servicepath: /demo
     "id": "ON000543",
     "type": "Order",
     "productID": {
-      "value": "MY83-9G920",
+      "value": "MY83_9G920",
       "type": "String"
     },
     "planParts": {
@@ -325,7 +325,7 @@ fiware-servicepath: /demo
     "id": "ON000544",
     "type": "Order",
     "productID": {
-      "value": "MY83-9G920",
+      "value": "MY83_9G920",
       "type": "String"
     },
     "planParts": {
@@ -368,7 +368,7 @@ fiware-servicepath: /demo
     "id": "ON000545",
     "type": "Order",
     "productID": {
-      "value": "MY83-9G920",
+      "value": "MY83_9G920",
       "type": "String"
     },
     "planParts": {
@@ -411,7 +411,7 @@ fiware-servicepath: /demo
     "id": "ON000546",
     "type": "Order",
     "productID": {
-      "value": "MY83-9G920",
+      "value": "MY83_9G920",
       "type": "String"
     },
     "planParts": {
@@ -454,7 +454,7 @@ fiware-servicepath: /demo
     "id": "ON000611",
     "type": "Order",
     "productID": {
-      "value": "MY83-9G921",
+      "value": "MY83_9G921",
       "type": "String"
     },
     "planParts": {
@@ -501,7 +501,7 @@ fiware-servicepath: /demo
     "id": "ON000613",
     "type": "Order",
     "productID": {
-      "value": "MY83-9G921",
+      "value": "MY83_9G921",
       "type": "String"
     },
     "planParts": {
@@ -548,7 +548,7 @@ fiware-servicepath: /demo
     "id": "ON000718",
     "type": "Order",
     "productID": {
-      "value": "MY83-9G921",
+      "value": "MY83_9G921",
       "type": "String"
     },
     "planParts": {
@@ -595,7 +595,7 @@ fiware-servicepath: /demo
     "id": "ON001002",
     "type": "Order",
     "productID": {
-      "value": "MY83-014K96",
+      "value": "MY83_014K96",
       "type": "String"
     },
     "planParts": {
@@ -638,7 +638,7 @@ fiware-servicepath: /demo
     "id": "ON001358",
     "type": "Order",
     "productID": {
-      "value": "MY83-014K96",
+      "value": "MY83_014K96",
       "type": "String"
     },
     "planParts": {
@@ -685,7 +685,7 @@ fiware-servicepath: /demo
     "id": "ON001356",
     "type": "Order",
     "productID": {
-      "value": "MY83-014K97",
+      "value": "MY83_014K97",
       "type": "String"
     },
     "planParts": {

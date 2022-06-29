@@ -84,7 +84,7 @@ fiware-servicepath: /demo
 content-type: application/json
 
 {
-   "value": ["robotVersionNummer","test","test2","test3","test4","test5"],
+   "value": ["robotVersiohhmer","tegjdst255","ttteasdst3",262,1,2,33],
    "type": "command"
 }
 
