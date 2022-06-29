@@ -20,5 +20,9 @@
   "planCycleTime": {
     "value": 34,
     "type": "Integer"
+  },
+  "pdf": {
+    "value": "NameDerPDF.pdf",
+    "type": "String"
   }
 }
