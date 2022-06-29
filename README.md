@@ -54,6 +54,12 @@ For downloading and uploading programms, correct directory must be chosen:
 
 Every different file must have correct directory. 
 
+The OPCUA_Server IP has to be adjust in the docker_compose file:
+![image](https://user-images.githubusercontent.com/103100980/176501183-013f9ca7-a3fc-497f-81fd-5b1f726c0db6.png)
+
+As well as in the config.properties of the IoT Agents:
+![image](https://user-images.githubusercontent.com/103100980/176501471-5ff6d2e1-5905-4e63-8934-2c8e8e681225.png)
+
 ## How to deploy it?
 
 For using a software, it is required to have docker compose and Visual Studio Code already installed on computer.
