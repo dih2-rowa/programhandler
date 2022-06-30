@@ -64,13 +64,13 @@ As well as in the config.properties of the IoT Agents:
 
 For using a software, it is required to have docker compose and Visual Studio Code already installed on computer.
 
-Program C3Server should be copied to robot and started - if wished, it can be moved to autostart. 
+Program C3Bridge should be copied to robot and started - if wished, it can be moved to autostart. 
 
 Code shall be copied to place, where program handler is supposed to work. 
 
-Next step is to Compose Docker file. For it, file docker-compose_OPC_UA.yml must be find in Visual Studio code:
+Next step is to Compose Docker file. For it, file docker-compose.yml must be find in Visual Studio code:
 
-![image](https://user-images.githubusercontent.com/103100980/176124517-64a00eeb-b499-4260-939b-a631f063b7cf.png)
+![image](https://user-images.githubusercontent.com/103100980/176618480-dc39ad00-c259-440c-b9c3-495f8674e4f2.png)
 
 and with right mouse button, choose an option Compose Up - Disclaimer: Docker must be active. 
 
