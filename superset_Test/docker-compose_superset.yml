@@ -68,7 +68,7 @@ services:
       - hostnet
 volumes:
   crate-db:
-  orion_mongo_data:
+  orion_mongo_data: 
   orion_mongo_conf:
 
 networks:
