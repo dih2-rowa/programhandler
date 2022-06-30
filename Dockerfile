@@ -8,14 +8,14 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
 WORKDIR /src
-COPY ["RowaConsoleClient.csproj", "./app/"]
-RUN dotnet restore "./RowaConsoleClient.csproj" 
+COPY ["./RowaConsoleClient/RowaConsoleClient.csproj", "./app/"]
+RUN dotnet restore "./app/RowaConsoleClient.csproj" 
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "./RowaConsoleClient.csproj" -c Release -o /app/build
+RUN dotnet build "./RowaConsoleClient/RowaConsoleClient.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "./RowaConsoleClient.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./RowaConsoleClient/RowaConsoleClient.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
