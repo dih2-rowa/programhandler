@@ -1,0 +1,86 @@
+###
+GET http://localhost:5001/api/fiware
+
+### Create one
+POST http://localhost:5001/api/fiware
+Content-Type: application/json
+
+{
+ "data": [
+        {
+            "id": "Room1",
+            "temperature": {
+                "metadata": {},
+                "type": "Float",
+                "value": 28.5
+            },
+            "type": "Room"
+        }
+    ],
+    "subscriptionId": "57458eb60962ef754e7c0998"   
+}
+
+###
+GET http://localhost:1026/v2/entities
+
+###
+POST http://localhost:1026/v2/entities
+Content-Type: application/json
+
+{
+  "id": "Room1",
+  "type": "Room",
+  "temperature": {
+    "value": 23,
+    "type": "Float"
+  },
+  "pressure": {
+    "value": 720,
+    "type": "Integer"
+  }
+}
+
+###
+POST http://localhost:1026/v2/subscriptions
+Content-Type: application/json
+
+{
+  "description": "A subscription to get info about Room1",
+  "subject": {
+    "entities": [
+      {
+        "id": "Room1",
+        "type": "Room"
+      }
+    ],
+    "condition": {
+      "attrs": [
+        "pressure"
+      ]
+    }
+  },
+  "notification": {
+    "http": {
+      "url": "http://pghbackend:5001/api/fiware"
+    },
+    "attrs": [
+      "temperature"
+    ]
+  },
+  "expires": "2040-01-01T14:00:00.00Z"
+}
+
+###
+PATCH http://localhost:1026/v2/entities/Room1/attrs
+Content-Type: application/json
+
+{
+  "temperature": {
+    "value": 22,
+    "type": "Float"
+  },
+  "pressure": {
+    "value": 763,
+    "type": "Float"
+  }
+}

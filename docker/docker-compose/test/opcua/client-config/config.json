@@ -1,0 +1,95 @@
+{
+  "logLevel" : "INFO",
+  "contextBroker" : {
+    "host" : "orion",
+    "port" : 1026
+  },
+  "server" : {
+    "port" : 4001,
+    "baseRoot" : "/"
+  },
+  "deviceRegistry" : {
+    "type" : "memory"
+  },
+  "mongodb" : {
+    "host" : "iotmongo",
+    "port" : "27017",
+    "db" : "iotagent",
+    "retries" : 5,
+    "retryTime" : 5
+  },
+  "types" : {
+    "myEmptyFolder" : {
+      "service" : "opcua",
+      "subservice" : "/test",
+      "active" : [ ],
+      "lazy" : [ ],
+      "commands" : [ ]
+    },
+    "MyObject" : {
+      "service" : "opcua",
+      "subservice" : "/test",
+      "active" : [ {
+        "name" : "2:MyVariable",
+        "type" : "Number"
+      } ],
+      "lazy" : [ ],
+      "commands" : [ {
+        "name" : "2:mymethod",
+        "type" : "command"
+      }, {
+        "name" : "2:multiply",
+        "type" : "command"
+      } ]
+    }
+  },
+  "browseServerOptions" : null,
+  "service" : "opcua",
+  "subservice" : "/test",
+  "providerUrl" : "http://iotage:4001",
+  "pollingExpiration" : "200000",
+  "pollingDaemonFrequency" : "20000",
+  "deviceRegistrationDuration" : "P1M",
+  "defaultType" : null,
+  "contexts" : [ {
+    "id" : "myEmptyFolder",
+    "type" : "myEmptyFolder",
+    "service" : "opcua",
+    "subservice" : "/test",
+    "polling" : false,
+    "mappings" : [ ]
+  }, {
+    "id" : "MyObject",
+    "type" : "MyObject",
+    "service" : "opcua",
+    "subservice" : "/test",
+    "polling" : false,
+    "mappings" : [ {
+      "ocb_id" : "2:MyVariable",
+      "opcua_id" : "ns=2;i=3",
+      "object_id" : null,
+      "inputArguments" : [ ]
+    }]
+  } ],
+  "contextSubscriptions" : [ {
+    "id" : "MyObject",
+    "type" : "MyObject",
+    "mappings" : [ {
+      "ocb_id" : "2:mymethod",
+      "opcua_id" : "ns=2;i=7",
+      "object_id" : "ns=2;i=2",
+      "inputArguments" : [ ]
+    }, {
+      "ocb_id" : "2:multiply",
+      "opcua_id" : "ns=2;i=10",
+      "object_id" : "ns=2;i=2",
+      "inputArguments" : [{
+        "type": "x",
+        "dataType": 8
+      }, {
+        "type": "y",
+        "dataType": 8
+      } ]
+    } ]
+  } ]
+}

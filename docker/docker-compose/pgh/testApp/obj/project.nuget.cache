@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cV2gjGnDGbXu7B/r6zfa6eRQ1sxL12RsrNaONMYW+KNyfG4SieQ10/4PNIHZUrxGyuNCg0SKSFFH5gbdTX7MPQ==",
+  "dgSpecHash": "l49bNKfZr+4knx1S9sNaBGTnAUHSloFQ9vbcy3BjQVYGJcARzrsVkWebWABBwe3RZYp960qFtENH+rVo1iDWKA==",
   "success": true,
-  "projectFilePath": "/app/DotNet.Docker.csproj",
+  "projectFilePath": "/workspaces/programmhandler/docker/docker-compose/pgh/testApp/DotNet.Docker.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

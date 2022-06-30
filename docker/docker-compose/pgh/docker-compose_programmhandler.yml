@@ -10,14 +10,17 @@ services:
     image: fiware/orion
     links:
       - mongo
+      - pgh-backend
     ports:
       - "1026:1026"
-    command: -dbhost mongo
-  pgh-backend:
+    command: -dbhost mongo -logLevel DEBUG
+  pghbackend:
     image: mcr.microsoft.com/dotnet/sdk:6.0
+    ports:
+      - "5001:5001"
     volumes:
-      - ./testApp:/app
-    tty: true
+      - ./Fiware:/app
+    command: [bash, -c, "cd /app && dotnet dev-certs https --trust && dotnet watch run -v --urls=http://0.0.0.0:5001/"]
 
 
 volumes:

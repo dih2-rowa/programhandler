@@ -12,6 +12,11 @@ Content-Type: application/json
 -d @add_device_NGSIv2.json
 
 ###
+GET http://localhost:4001/iot/devices
+fiware-service: opcua_car
+fiware-servicepath: /demo
+
+###
 POST http://localhost:4001/iot/devices
 fiware-service: opcua_car
 fiware-servicepath: /demo
@@ -85,16 +90,15 @@ fiware-servicepath: /demo
 
 
 ### Update Entity
-PATCH http://localhost:1026/v2/entities/Robot1/attrs
+PUT http://localhost:1026/v2/entities/age01_Car/attrs/Accelerate?type=Device
 fiware-service: opcua_car
 fiware-servicepath: /demo
 content-type: application/json
 
 {
-  "Wert": {
-    "value": 1,
+    "value": [1],
     "type": "command"
-  }
+  
 }
 
 
