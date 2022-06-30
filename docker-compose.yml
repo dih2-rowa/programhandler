@@ -260,6 +260,19 @@ services:
 
 
 
+  rowaconsoleclient:
+    image: rowaconsoleclient
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+  pythonapplication1:
+    image: pythonapplication1
+    build:
+      context: .
+      dockerfile: ./subscription_manager/Dockerfile
+    ports:
+      - 5011:5011
 
 volumes:
   iotmongo_data:
