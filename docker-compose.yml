@@ -266,6 +266,7 @@ services:
       dockerfile: ./Dockerfile
 
 
+
 volumes:
   iotmongo_data:
   iotmongo_conf:
