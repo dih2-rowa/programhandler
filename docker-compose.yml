@@ -259,12 +259,6 @@ services:
       - crate-db:/data
 
 
-  rowaconsoleclient:
-    image: rowaconsoleclient
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-
 
 
 volumes:
