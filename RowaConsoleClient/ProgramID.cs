@@ -610,11 +610,11 @@ namespace ProgramNummerCheck
 
             var body = @"{" + "\n" + @"""value"": [""" + orderStatus + @""", """ + ProgrammName + @""", """ + OrderID + @""",  " + VersionOnRobot + @", " + VersionOnRobot + @", " + planCycleTime + @", " + planParts + "]," + "\n" +
             @"   ""type"": ""command""" + "\n" + @"}";
-            string bod1 = Convert.ToString(body);
+            string body1 = Convert.ToString(body);
 
 
 
-            request.AddJsonBody(bod1);
+            request.AddJsonBody(body1);
 
             client.Execute(request);
 
