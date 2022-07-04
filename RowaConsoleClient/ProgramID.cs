@@ -19,14 +19,13 @@ namespace ProgramNummerCheck
         public void ReadConfig(string txtFile1)
         {
 
-            Variable.Variables DataLesen = new Variable.Variables();
             var dict = File.ReadAllLines(txtFile1)
                            .Select(l => l.Split(new[] { ';' }))
                            .ToDictionary(s => s[0].Trim(), s => s[1].Trim());  // read the entire file into a dictionary.
 
             try  // exception for new programms
             {
-                DataOnRobot = Convert.ToString(dict[DataLesen.Name]);
+                DataOnRobot = Convert.ToString(dict[ProgramNummer.ProgrammName]);
             }
             catch (Exception ex)
             {
@@ -45,13 +44,12 @@ namespace ProgramNummerCheck
         public void ReadConfig(string txtFile1)
         {
 
-            Variable.Variables ValueLesen = new Variable.Variables();
             var dict = File.ReadAllLines(txtFile1)
                            .Select(l => l.Split(new[] { ';' }))
                            .ToDictionary(s => s[0].Trim(), s => s[1].Trim());  // read the entire file into a dictionary.
             try // exception for new programms
             {
-                ValueOnRobot = Convert.ToInt32(dict[ValueLesen.Name]);
+                ValueOnRobot = Convert.ToInt32(dict[ProgramNummer.ProgrammName]);
 
             }
             catch (Exception ex)
@@ -69,7 +67,7 @@ namespace ProgramNummerCheck
         private static string? IDName;
         private static string? OrderID;
 
-        private static string? ProgrammName;
+        public static string? ProgrammName;
         private static string? deadline;
         private static string? finishedTime;
         private static string? orderStatus;
@@ -119,8 +117,10 @@ namespace ProgramNummerCheck
 
 
                 Dictionary<string, string> ProgramDict = new Dictionary<string, string>();
-                Dictionary<string, int> ValueDict = new Dictionary<string, int>();
+                Dictionary<string, float> ValueDict = new Dictionary<string, float>();
 
+
+                // is it needed hier?
                 Variable.Variables ProgramCheck = new Variable.Variables();
                 try
                 {
@@ -128,7 +128,7 @@ namespace ProgramNummerCheck
                 }
                 catch (Exception ex)
                 {
-                    ProgramDict.Add("0", data);
+                    SubNr = 0;
 
                 }
 
@@ -149,12 +149,11 @@ namespace ProgramNummerCheck
                         // VersDat is a string variable make from data we get from robot
                         string VersDat = Convert.ToString(response26.LastWriteTime);
 
-                        string VersDatOnRobot = Convert.ToString(dictLesen.DataOnRobot);
+                        string VersDatOnRobot;
 
 
                         if (ProgramDict.ContainsKey(ProgrammName) == true)
                         {
-
 
 
                             ProgramDict.TryGetValue(ProgrammName, out VersDatOnRobot);
@@ -164,8 +163,8 @@ namespace ProgramNummerCheck
                         else
                         {
                             ProgramDict.Add(ProgrammName, VersDat);
-                            ProgramCheck.VersionOnRobot = 1;
-                            ValueDict.Add(ProgrammName, ProgramCheck.VersionOnRobot);
+                            VersionOnRobot = 1;
+                            ValueDict.Add(ProgrammName, VersionOnRobot);
                             VersDatOnRobot = VersDat;
 
                         }
@@ -174,17 +173,17 @@ namespace ProgramNummerCheck
 
                         if (VersDat != VersDatOnRobot)
                         {
-                            ProgramCheck.VersionOnRobot = valueLesen.ValueOnRobot;
-                            ProgramCheck.VersionOnRobot++;
+                            VersionOnRobot  = valueLesen.ValueOnRobot;
+                            VersionOnRobot++;
                             VersDatOnRobot = VersDat;
 
                             ProgramDict[ProgrammName] = VersDatOnRobot;
-                            ValueDict[ProgrammName] = ProgramCheck.VersionOnRobot;
+                            ValueDict[ProgrammName] = VersionOnRobot;
                         }
                         else
                         {
-                            ProgramCheck.VersionOnRobot = valueLesen.ValueOnRobot;
-                            ValueDict[ProgrammName] = ProgramCheck.VersionOnRobot;
+                            VersionOnRobot = valueLesen.ValueOnRobot;
+                            ValueDict[ProgrammName] = VersionOnRobot;
                         }
 
 
@@ -221,7 +220,7 @@ namespace ProgramNummerCheck
                         if (lines2.Contains(ProgrammName))
                         {
                             {
-                                lines2 = lines2.Replace(ProgrammName + ";" + valueLesen.ValueOnRobot, ProgrammName + ";" + ProgramCheck.VersionOnRobot);
+                                lines2 = lines2.Replace(ProgrammName + ";" + valueLesen.ValueOnRobot, ProgrammName + ";" + VersionOnRobot);
 
                             }
                             File.WriteAllText(@"ValueDict.txt", lines2);
@@ -233,7 +232,7 @@ namespace ProgramNummerCheck
                             {
                                 using (TextWriter tw = new StreamWriter(fs))
 
-                                    foreach (KeyValuePair<string, int> kvp1 in ValueDict)
+                                    foreach (KeyValuePair<string, float> kvp1 in ValueDict)
                                     {
                                         tw.WriteLine(string.Format("{0};{1}", kvp1.Key, kvp1.Value));
                                     }
@@ -243,9 +242,7 @@ namespace ProgramNummerCheck
 
                         #endregion
 
-
-
-                        VersionOnRobot = ProgramCheck.VersionOnRobot;
+                     
                         Answer();
                         SubNr = 0;
                     }
