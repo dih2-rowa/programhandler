@@ -24,7 +24,7 @@ Basically, the Program Handler consists of 3 software components:
   - File Server
 
 ### Robot Program Handler - Server
-Is a software written in C# that is based on the OpenSource [C3bridge-server](https://github.com/ulsu-tech/c3bridge-server).
+Is a software written in C++ that is based on the OpenSource [C3bridge-server](https://github.com/ulsu-tech/c3bridge-server).
 The software itself has to be installed directly on the robot and .here it takes over the functions for sending and receiving robot programs.
 
 ### Robot Program Handler - Client
@@ -37,7 +37,7 @@ The file server is used to make robot programs available to several processing c
 ## How to adapt it?
 
 This software is working only with Kuka KRC4 robot, with operation system Windows XP or higher. 
-First of all, it is neccesary, to know, what IP address Robot Controler has. This can be find directly in Kuka Teach Panel in (Manu -> Stat-up -> Network Configuration).
+First of all, it is neccesary, to know, what IP address Robot Controler has. This can be find directly in Kuka Teach Panel in (Menu -> Start-up -> Network Configuration).
 Then it is necessary to open Port 7000 in controller (Menu -> Start-up->  Network Configuration -> Advanced -> NAT -> Add Port) with permitted protocols "tcp/udp". After it, cold start with files reload must be performed. 
 
 In Rowa Console Client, in ProgramID.cs, ID number must be adjusted to actual state:
