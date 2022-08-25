@@ -8450,11 +8450,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marlena.knitter\\Desktop\\RoboSonic\\RowaConsoleClient\\RowaConsoleClient.csproj",
+      "projectUniqueName": "C:\\Users\\marlena.knitter\\Desktop\\GitProgram\\programhandler\\RowaConsoleClient\\RowaConsoleClient.csproj",
       "projectName": "RowaConsoleClient",
-      "projectPath": "C:\\Users\\marlena.knitter\\Desktop\\RoboSonic\\RowaConsoleClient\\RowaConsoleClient.csproj",
+      "projectPath": "C:\\Users\\marlena.knitter\\Desktop\\GitProgram\\programhandler\\RowaConsoleClient\\RowaConsoleClient.csproj",
       "packagesPath": "C:\\Users\\marlena.knitter\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marlena.knitter\\Desktop\\RoboSonic\\RowaConsoleClient\\obj\\",
+      "outputPath": "C:\\Users\\marlena.knitter\\Desktop\\GitProgram\\programhandler\\RowaConsoleClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

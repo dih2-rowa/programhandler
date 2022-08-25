@@ -31,7 +31,10 @@
 					"type": "String"
 				}
 			],
-			"commands": [
+			"commands": [{
+				"name": "writeProductstatus",
+				"type": "command"
+			}
 				]
 		}
 	},
@@ -58,6 +61,43 @@
 		}]
 	}
 	],
-	"contextSubscriptions" : [
+	"contextSubscriptions" : [{
+		"id": "Robot1",
+		"type": "Product",
+		"mappings": [{
+			"ocb_id": "writeProductstatus",
+			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Method",
+			"object_id": "ns=3;s=\"FB_OPC_UA_DB\"",
+			"inputArguments": [{
+				"type": "orderstate",
+				"dataType": 12
+			},
+			{
+				"type": "ProgramName_Server",
+				"dataType": 12
+			},
+			{
+				"type": "ProductID_Server",
+				"dataType": 12
+			},
+			{
+				"type": "programVersion_Server",
+				"dataType": 5
+			},
+			{
+				"type": "versionOnRobot",
+				"dataType": 5
+			},
+			{
+				"type": "planCycleTime",
+				"dataType": 5
+			},
+			{
+				"type": "plannedParts",
+				"dataType": 5
+			}
+			]
+		}]
+	}
 		]
 }

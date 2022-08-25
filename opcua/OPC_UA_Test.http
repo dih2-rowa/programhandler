@@ -78,6 +78,17 @@ content-type: application/json
 }
 
 ### Execute OPC-UA Method
+PUT http://localhost:1026/v2/entities/Robot1/attrs/writeProductstatus?type=Product
+fiware-service: robot_info 
+fiware-servicepath: /demo
+content-type: application/json
+
+{
+"value": ["-","MY83_9G921","MY83_9G921",1,1,0 ,0],
+   "type": "command"
+}
+
+### Execute OPC-UA Method
 PUT http://localhost:1026/v2/entities/Robot1/attrs/writeOrderstatus?type=Order
 fiware-service: robot_info 
 fiware-servicepath: /demo
@@ -180,6 +191,34 @@ fiware-servicepath: /demo
     "notification": {
         "http": {
             "url": "http://host.docker.internal:5011/notification/VersionReq"
+        },
+        "attrs": [],
+        "metadata": ["dateCreated", "dateModified"]
+    }
+}
+
+### Add subscription for Order Request
+POST http://localhost:1026/v2/subscriptions
+content-type: application/json
+fiware-service: robot_info
+fiware-servicepath: /demo
+
+{
+    "description": "Send version request",
+    "subject": {
+        "entities": [
+        {
+            "idPattern": ".*",
+            "type": "OrderReq"
+        }
+        ],
+        "condition": {
+            "attrs": [] 
+        }
+    },
+    "notification": {
+        "http": {
+            "url": "http://host.docker.internal:5011/notification/OrderReq"
         },
         "attrs": [],
         "metadata": ["dateCreated", "dateModified"]

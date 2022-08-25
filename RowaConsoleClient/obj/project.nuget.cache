@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o8vl8y8cD5wDk9Vg1zDWvFa5ZlGai9n9ipELTxRezE7xNWnjnO1mYlpdcfLe0g2N8IwiHmri3ozWQCEepZMWlg==",
+  "dgSpecHash": "gahf2INUsuGCVvPrBwZe2tNSn/Prt++ew0meut3XOLTFw1I2tX3x2rbbIRt3xPb+MYUKtDu2A7wGyJAV7P0Q2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marlena.knitter\\Desktop\\RoboSonic\\RowaConsoleClient\\RowaConsoleClient.csproj",
+  "projectFilePath": "C:\\Users\\marlena.knitter\\Desktop\\GitProgram\\programhandler\\RowaConsoleClient\\RowaConsoleClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marlena.knitter\\.nuget\\packages\\docker.dotnet\\3.125.5\\docker.dotnet.3.125.5.nupkg.sha512",
     "C:\\Users\\marlena.knitter\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
