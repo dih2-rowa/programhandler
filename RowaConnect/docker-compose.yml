@@ -1,0 +1,9 @@
+
+version: '3.4'
+
+services:
+  rowaconnect:
+    image: rowaconnect
+    build:
+      context: .
+      dockerfile: ./Dockerfile
