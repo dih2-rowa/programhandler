@@ -1,1 +1,0 @@
-{"subscriptionId": "62bc5a7852280d16b377b5af", "data": [{"id": "VersionReq1", "type": "VersionReq", "productID": {"type": "String", "value": "ON000544", "metadata": {"dateCreated": {"type": "DateTime", "value": "2022-06-29T13:58:11.633Z"}, "dateModified": {"type": "DateTime", "value": "2022-06-29T14:09:32.991Z"}}}}]}
