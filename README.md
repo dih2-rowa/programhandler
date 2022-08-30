@@ -40,19 +40,16 @@ This software is working only with Kuka KRC4 robot, with operation system Window
 First of all, it is neccesary, to know, what IP address Robot Controler has. This can be find directly in Kuka Teach Panel in (Manu -> Stat-up -> Network Configuration).
 Then it is necessary to open Port 7000 in controller (Menu -> Start-up->  Network Configuration -> Advanced -> NAT -> Add Port) with permitted protocols "tcp/udp". After it, cold start with files reload must be performed. 
 
-In Rowa Console Client, in ProgramID.cs, ID number must be adjusted to actual state:
-![image](https://user-images.githubusercontent.com/103100980/176121197-adb4f0c9-a16f-4823-9095-ab5ef7c691a0.png)
+To start application running proper one must perform steps below:
+1. Download C3 Bridge Interface Server from here https://github.com/ulsu-tech/c3bridge-server or http://c3.ulsu.tech/, put it to robot controller , if wished, it can be added to autostart. To put it proper to robot controller, admin account must be active and HMI must be minimized. Then just start it, server is already running and is ready to work.
+2. In RowaConnct/exe is a executing file RowaConnect.exe, start it
+3. Fill Ip Adress and Port field with correct data(Ip adress of robot os to find in robot Controller  (Menu -> Start-up->  Network Configuration)
+4. Click on check connection, then, if connection is fine, find a correct path, where are located programs, which should be checked and add a path to server where files are stored (Robot also must see this path!)
+5. Click on choose a folder to save your choice and then connect.
+6. Program runs
+![image](https://user-images.githubusercontent.com/103100980/187377224-612c7a82-ccaa-4008-9daa-21d2624af2bc.png)
 
 
-For checking a program, correct folder must be chosen:
- 
-![image](https://user-images.githubusercontent.com/103100980/176119800-0a3bd262-6ac8-4aae-ac2e-5d425a762ca6.png)
-
-
-For downloading and uploading programms, correct directory must be chosen: 
-![image](https://user-images.githubusercontent.com/103100980/176120621-a4be2c46-2ed6-431a-8907-a731844823b3.png)
-
-Every different file must have correct directory. 
 
 The OPCUA_Server IP has to be adjust in the docker_compose file:
 ![image](https://user-images.githubusercontent.com/103100980/176501183-013f9ca7-a3fc-497f-81fd-5b1f726c0db6.png)
