@@ -40,6 +40,7 @@ namespace RowaConnect
         public static int planCycleTime;
         public static int processingLength;
         public static float VersionOnRobot;
+        public static int VersionServer;
         public string dateNow = DateTimeOffset.Now.ToString("g");
         public string data = DateTime.Now.ToString("yyyy-MM-dd");
         #endregion
@@ -90,7 +91,7 @@ namespace RowaConnect
                     connected = true;
 
 
-                    // miejsce na nowy ´text i image
+                    // miejsce na nowy Â´text i image
                     label3.Text = "        Connection OK, choose a working path";
                     label3.Image = Image.FromFile(@"icons8-documents-folder-18.png");
                     this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,7 +230,6 @@ namespace RowaConnect
                 Dictionary<string, float> ValueDict = new Dictionary<string, float>();
 
 
-                // is it needed hier?
                 try
                 {
                     ProgramDict.Add(ProgrammName, Convert.ToString(dictLesen.DataOnRobot));
@@ -242,13 +242,9 @@ namespace RowaConnect
 
 
                 if (SubNr == 1 || SubNr == 4)
-                {
-                   
+                {                 
                     FilePropertiesRequest request26 = new FilePropertiesRequest(@"KRC:\" + ProgramPath + ProgrammName);
 
-
-
-                    // 
                     FilePropertiesResponse response26 = (FilePropertiesResponse)syncClient.SendRequest(request26);
                     if (response26.Success)
                     {
@@ -263,7 +259,6 @@ namespace RowaConnect
                         if (ProgramDict.ContainsKey(ProgrammName) == true)
                         {
 
-
                             ProgramDict.TryGetValue(ProgrammName, out VersDatOnRobot);
 
                         }
@@ -276,7 +271,6 @@ namespace RowaConnect
                             VersDatOnRobot = VersDat;
 
                         }
-
 
 
                         if (VersDat != VersDatOnRobot)
@@ -293,7 +287,6 @@ namespace RowaConnect
                             VersionOnRobot = valueLesen.ValueOnRobot;
                             ValueDict[ProgrammName] = VersionOnRobot;
                         }
-
 
                         #region dict to file 
                         string lines = System.IO.File.ReadAllText(@"ProgramDict.txt");
@@ -359,16 +352,12 @@ namespace RowaConnect
                             }));
                         }
                        
-
-
-                       
                         Fault1 = true;
                         Fault4 = true;
                         Fault5 = true;
                         SubNr = 0;
                     }
                 }
-
 
                 if (SubNr == 2)
                 {
@@ -378,7 +367,7 @@ namespace RowaConnect
                     Response response = syncClient.SendRequest(request20);
 
                     // Move
-                    response = syncClient.SendRequest(new CopyFileRequest(@"KRC:\" + ProgramPath  + ProgrammName, @"" + Form1._Root + ProgrammName + "-" + data));
+                    response = syncClient.SendRequest(new CopyFileRequest(@"KRC:\" + ProgramPath  + ProgrammName, @"" + Form1._Root + ProgrammName + "_V" + Form1.VersionOnRobot));
 
                     SubNr = 0;
 
@@ -386,7 +375,7 @@ namespace RowaConnect
 
                     {
                         Console.Invoke(new MethodInvoker(delegate {
-                            Console.AppendText("[Info: " + dateNow + "] " + "Program ->" + ProgrammName + "<- succesfully tranfered from \"KRC:\\ " + ProgramPath + " to " + Form1._Root + System.Environment.NewLine);
+                            Console.AppendText("[Info: " + dateNow + "] " + "Version " + VersionOnRobot +" of Program ->" + ProgrammName + "<- succesfully tranfered from \"KRC:\\ " + ProgramPath + " to " + Form1._Root + System.Environment.NewLine);
                         }));
                     }
                     Fault2 = true;
@@ -396,22 +385,15 @@ namespace RowaConnect
 
                 }
 
-
-
-
                 if (SubNr == 3)
                 {
-                    if (Console.InvokeRequired)
-
-                    {
-                
-                    }
-                    SetFileAttributesRequest request21 = new SetFileAttributesRequest(@"" + Form1._Root  + ProgrammName, ItemAttribute.None, ItemAttribute.None);
+ 
+                    SetFileAttributesRequest request21 = new SetFileAttributesRequest(@"" + Form1._Root  + ProgrammName + "_V" + VersionServer, ItemAttribute.None, ItemAttribute.None);
 
                     Response response1 = syncClient.SendRequest(request21);
 
                     // Move
-                    response1 = syncClient.SendRequest(new CopyFileRequest(@"" + Form1._Root + ProgrammName, @"KRC:\" + ProgramPath + ProgrammName));
+                    response1 = syncClient.SendRequest(new CopyFileRequest(@"" + Form1._Root + ProgrammName + "_V" + VersionServer, @"KRC:\" + ProgramPath + ProgrammName));
 
 
                     SubNr = 0;
@@ -421,7 +403,7 @@ namespace RowaConnect
 
                     {
                         Console.Invoke(new MethodInvoker(delegate {
-                            Console.AppendText("[Info: " + dateNow + "] " + "Program ->" + ProgrammName + "<- succesfully tranfered from " + Form1._Root  + " to \"KRC:\\ " + ProgramPath + "\"" + System.Environment.NewLine);
+                            Console.AppendText("[Info: " + dateNow + "] " + "Version " + VersionServer +  " of Program ->" + ProgrammName + "<- succesfully tranfered from " + Form1._Root  + " to \"KRC:\\ " + ProgramPath + "\"" + System.Environment.NewLine);
                         }));
                     }
 
@@ -430,6 +412,7 @@ namespace RowaConnect
                     Fault5  = true;
 
                 }
+
                 if (Form1.Abort==true)
                 {
                    
@@ -513,16 +496,19 @@ namespace RowaConnect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1._Root = Root.Text; 
+            Form1._Root = Root.Text;
             if (Form1._Root == null)
-                    {
+            {
                 Console.AppendText("[Info: " + dateNow + "] " + "Download/Upload path is empty, please add it." + System.Environment.NewLine);
-                    };
-            Console.AppendText("[Info: " + dateNow + "] " + "Choosen path: " + Form1.ProgramPath + " If it is correct, connect to robot, if not, change a path." + System.Environment.NewLine + "[Info: " + dateNow + "] " + "Path for Download/Upload: " + Form1._Root + " If it is correct, connect to robot, if not, change a path." + System.Environment.NewLine);
-            button2.Enabled = true;
-            button1.Enabled=true;
-            Connect_TB.Enabled = false;
-            Unconnect_label.Enabled = true;
+            }
+            else
+            {
+                Console.AppendText("[Info: " + dateNow + "] " + "Choosen path: " + Form1.ProgramPath + " If it is correct, connect to robot, if not, change a path." + System.Environment.NewLine + "[Info: " + dateNow + "] " + "Path for Download/Upload: " + Form1._Root + " If it is correct, connect to robot, if not, change a path." + System.Environment.NewLine);
+                button2.Enabled = true;
+                button1.Enabled = true;
+                Connect_TB.Enabled = false;
+                Unconnect_label.Enabled = true;
+            }
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -544,13 +530,13 @@ namespace RowaConnect
             }
         }
 
-        private void Program_box_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Port_box_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
 
         }
     }
@@ -641,8 +627,13 @@ namespace RowaConnect
         public ProgramName programName { get; set; }
         public PlanCycleTime planCycleTime { get; set; }
         public ProcessingLength processingLength { get; set; }
+        public ProgramVersion programVersion { get; set; }
 
+    }
 
+    public class ProgramVersion
+    {
+        public int value { get; set; }
     }
 
     public class ProgramName
@@ -673,7 +664,7 @@ namespace RowaConnect
                 request.AddHeader("Content-Type", "application/json");
 
 
-                var body = @"{" + "\n" + @"""value"": [""" + Form1.orderStatus + @""", """ + Form1.ProgrammName + @""", """ + Form1.OrderID + @""",  " + Form1.VersionOnRobot + @", " + Form1.VersionOnRobot + @", " + Form1.planCycleTime + @", " + Form1.planParts + "]," + "\n" +
+                var body = @"{" + "\n" + @"""value"": [""" + Form1.orderStatus + @""", """ + Form1.ProgrammName + @""", """ + Form1.OrderID + @""",  " + Form1.VersionServer + @", " + Form1.VersionOnRobot + @", " + Form1.planCycleTime + @", " + Form1.planParts + "]," + "\n" +
                 @"   ""type"": ""command""" + "\n" + @"}";
                 string body1 = Convert.ToString(body);
 
@@ -693,7 +684,7 @@ namespace RowaConnect
                 request.AddHeader("Content-Type", "application/json");
 
 
-                var body = @"{" + "\n" + @"""value"": [""-"",""" + Form1.ProgrammName + @""",""" + Form1.OrderID + @"""," + Form1.VersionOnRobot + @"," + Form1.VersionOnRobot + @",0,0]," + "\n" +
+                var body = @"{" + "\n" + @"""value"": [""-"",""" + Form1.ProgrammName + @""",""" + Form1.OrderID + @"""," + Form1.VersionServer + @"," + Form1.VersionOnRobot + @",0,0]," + "\n" +
                 @"   ""type"": ""command""" + "\n" + @"}";
                 string body1 = Convert.ToString(body);
 
@@ -727,6 +718,7 @@ namespace RowaConnect
                     Form1.ProgrammName = programName.programName.value;
                     Form1.planCycleTime = Convert.ToInt32(programName.planCycleTime.value);
                     Form1.processingLength = Convert.ToInt32(programName.processingLength.value);
+                    Form1.VersionServer = Convert.ToInt32(programName.programVersion.value);
 
 
 

@@ -12,6 +12,7 @@ dt = datetime.now()
 jsona = "Sub1"
 jsonb = "Sub2"
 jsonc = "Sub3"
+jsond = "Sub4"
 
 @app.route("/notification/VersionReq", methods=['GET', 'POST'])
 def Sub1():
@@ -49,6 +50,18 @@ def Sub3():
 
     return ""
 
+@app.route("/notification/OrderReq", methods=['GET', 'POST'])
+def Sub4():
+    print(request.path)
+    print(request.method)
+    print(request.json)
+    print(json.dumps(request.json, indent=4))
+
+    global jsond
+    jsond = json.dumps(request.json)
+
+    return ""
+
 @app.route("/Subscription1")
 def wannacry():
     return jsona
@@ -61,6 +74,10 @@ def wannacry2():
 @app.route("/Subscription3")
 def wannacry3():
     return jsonc
+
+@app.route("/Subscription4")
+def wannacry4():
+    return jsond
     
 
 print (dt)

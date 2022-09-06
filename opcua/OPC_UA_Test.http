@@ -88,6 +88,17 @@ content-type: application/json
    "type": "command"
 }
 
+### Execute OPC-UA Method NEUE SUBSKRIPTION
+PUT http://localhost:1026/v2/entities/Robot1/attrs/writeProductstatus?type=Product
+fiware-service: robot_info 
+fiware-servicepath: /demo
+content-type: application/json
+
+{
+   "value": ["robotVersiohhmer","tegjdst255","ttteasdst3",262,1,2,33],
+   "type": "command"
+}
+
 
 ### Query subscriptions
 GET http://localhost:1026/v2/subscriptions
@@ -236,6 +247,34 @@ fiware-servicepath: /demo
     "notification": {
         "http": {
             "url": "http://host.docker.internal:5011/notification/RobotToServer"
+        },
+        "attrs": [],
+        "metadata": ["dateCreated", "dateModified"]
+    }
+}
+
+###
+POST http://localhost:1026/v2/subscriptions
+content-type: application/json
+fiware-service: robot_info
+fiware-servicepath: /demo
+
+{
+    "description": "Send trigger for program transfer Robot -- Server",
+    "subject": {
+        "entities": [
+        {
+            "idPattern": ".*",
+            "type": "OrderReq"
+        }
+        ],
+        "condition": {
+            "attrs": [] 
+        }
+    },
+    "notification": {
+        "http": {
+            "url": "http://host.docker.internal:5011/notification/OrderReq"
         },
         "attrs": [],
         "metadata": ["dateCreated", "dateModified"]

@@ -47,7 +47,11 @@
 					"type": "Number"
 				}
 			],
-			"commands": [
+			"commands": [{
+				"name": "writeProductstatus",
+				"type": "command"
+			}
+
 				]
 		}
 	},
