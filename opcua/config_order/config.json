@@ -123,7 +123,7 @@
 	],
 	"contextSubscriptions" : [{
 		"id": "Robot1",
-		"type": "Order",
+		"type": "Product",
 		"mappings": [{
 			"ocb_id": "writeOrderstatus",
 			"opcua_id": "ns=3;s=\"FB_OPC_UA_DB\".Method",
