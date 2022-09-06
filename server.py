@@ -8,7 +8,6 @@ from flask import Flask, request
 from datetime import datetime
 import json
 app = Flask(__name__)
-dt = datetime.now()
 jsona = "Sub1"
 jsonb = "Sub2"
 jsonc = "Sub3"
@@ -63,21 +62,20 @@ def Sub4():
     return ""
 
 @app.route("/Subscription1")
-def wannacry():
+def Forward1():
     return jsona
     
 @app.route("/Subscription2")
-def wannacry2():
+def Forward2():
     return jsonb
     
         
 @app.route("/Subscription3")
-def wannacry3():
+def Forward3():
     return jsonc
 
 @app.route("/Subscription4")
-def wannacry4():
+def Forward4():
     return jsond
     
 
-print (dt)
