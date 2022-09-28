@@ -1,5 +1,5 @@
 
-##### Introduction
+# Introduction
 
 Software is divided in 2 essential parts with are working simultaneously and can’t be separate. Whole project is meant to be an advanced communication between Robot controller, PLC, and user. It allows to:
 -	check a real-time data of every robot and every order
@@ -23,8 +23,20 @@ The center part of the project is a robotic cell. Robot makes the connection to 
 -	Actual speed of the robot
 -	Status on the parts in Robot’s working area
 -	Actual Order ID
+
+
 Every of those information are sent to Fiware, which is a context broker, so it sends this information simultaneously to Rose-AP2 and database. Also, in case, any data changed, there is an option to send a notification to inform and performs any steps if needed. 
 Rose-AP2 is a web server which shows data from Rose-AP1 in user friendly way. It has also an availability to add, delete and update entities such as robot, order or product, the way, that no knowledge of programming is needed. 
 
 
 ![image](https://user-images.githubusercontent.com/103100980/192736179-d6ca1c45-5278-4d5d-bb79-3ea07c6fd699.png)
+
+
+
+
+#### Robot Program Handler – Client is a Program with Graphical User Interface.
+It’s designed to make Rose-AP1 as simple as possible without any knowledge of software programming. It’s the simple EXE program which makes a connection to robot, simply by writing correct IP address
+
+#### Information Server
+Information server is a webpage which allows to check info about product, robot and order. Add new, change or delete any entities
+
