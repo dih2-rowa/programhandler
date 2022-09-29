@@ -47,8 +47,20 @@ Before running this application, it is essential to download some software:
     Save the instalation file
 
     Install with all default suggestion
-  
+    
+    Docker may not work, if account on the computer is not defined as an admin. To change it you need to add your logon account to Windows group, docker-users. Docker for Window will create this group automatically when docker for Windows is installed.
 
+      Steps:
+
+        1. Logon to Windows as Administrator
+        2. Go to Windows Administrator Tools
+        3. Look for Windows Computer Management and click on it.
+        4. Or you can skip steps 1, right mouse clicking Computer Management, go to more, and select run as administrator and provide Administrator password.
+        5. Double click docker-users group and add your account as member.
+        6. Log off from Windows and log back on.
+        7. Click on Windows icon on bottom left and start Docker for Windows. This will start docker windows service.
+        8. You are good to go. 
+    
 -	Ubuntu
 
     Instal ubuntu for Windows from https://ubuntu.com/download/desktop
