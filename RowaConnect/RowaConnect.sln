@@ -5,15 +5,6 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RowaConnect", "RowaConnect.csproj", "{54A4FAF1-F8C5-4554-88DC-5B5AC7A777A9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0BCDB77F-CE85-43DF-A492-B34BE689BF70}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\RowaKukaKlientAlpha\RowaConsoleClient\ProgramDict.txt = ..\..\RowaKukaKlientAlpha\RowaConsoleClient\ProgramDict.txt
-		..\..\RowaKukaKlientAlpha\RowaConsoleClient\Sub1.txt = ..\..\RowaKukaKlientAlpha\RowaConsoleClient\Sub1.txt
-		..\..\RowaKukaKlientAlpha\RowaConsoleClient\Sub2.txt = ..\..\RowaKukaKlientAlpha\RowaConsoleClient\Sub2.txt
-		..\..\RowaKukaKlientAlpha\RowaConsoleClient\Sub3.txt = ..\..\RowaKukaKlientAlpha\RowaConsoleClient\Sub3.txt
-		..\..\RowaKukaKlientAlpha\RowaConsoleClient\ValueDict.txt = ..\..\RowaKukaKlientAlpha\RowaConsoleClient\ValueDict.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

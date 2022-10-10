@@ -79,6 +79,7 @@
             this.Port_box.Size = new System.Drawing.Size(100, 23);
             this.Port_box.TabIndex = 1;
             this.Port_box.Text = "7000";
+            this.Port_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Port_box_KeyPress);
             // 
             // Connect_TB
             // 
@@ -226,7 +227,6 @@
             this.Program_box.Name = "Program_box";
             this.Program_box.Size = new System.Drawing.Size(605, 23);
             this.Program_box.TabIndex = 0;
-            this.Program_box.SelectedIndexChanged += new System.EventHandler(this.Program_box_SelectedIndexChanged);
             this.Program_box.SelectedValueChanged += new System.EventHandler(this.Program_box_SelectedValueChanged);
             // 
             // button2
@@ -293,7 +293,6 @@
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(461, 23);
             this.Root.TabIndex = 3;
-            this.Root.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 

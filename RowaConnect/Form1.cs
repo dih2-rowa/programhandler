@@ -11,6 +11,8 @@ namespace RowaConnect
 
     public partial class Form1 : Form
     {
+
+        // Benutzten Variablem
         #region MainVariables
         public static string? IPAdr;
         public static int port;
@@ -47,8 +49,10 @@ namespace RowaConnect
 
         private static C3SharpInterface.SyncClient syncClient = new SyncClient();
 
+        
         public Form1()
         {
+            // GUI laden
 
             InitializeComponent();
             ProgramRun.WorkerSupportsCancellation = true;
@@ -60,7 +64,7 @@ namespace RowaConnect
             Connect_TB.Enabled = true;
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) // das ist wegen IP adress, dass kan man nur Number und punkt schreiber´n
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
@@ -71,14 +75,14 @@ namespace RowaConnect
 
         private void Connect_TB_Click(object sender, EventArgs e)
         {
-
+            // was passiert nach IP und port schreiben 
 
             label3.Text = "        Connecting..."; 
             IPAddress? IP;
             bool connected;
 
             IPAdr = IpAdress_box.Text;
-            bool connectingOK = IPAddress.TryParse(IPAdr, out IP);
+            bool connectingOK = IPAddress.TryParse(IPAdr, out IP); //pruef ob IP passt
             port = Convert.ToInt32(Port_box.Text);
 
 
@@ -86,25 +90,28 @@ namespace RowaConnect
             {
                 try
                 {
-
-                    syncClient.ConnectToHost(IPAddress.Parse(IPAdr), port); 
+                    // wenn IP ist OK und 
+                    syncClient.ConnectToHost(IPAddress.Parse(IPAdr), port);
                     connected = true;
 
 
-                    // miejsce na nowy Â´text i image
+         
                     label3.Text = "        Connection OK, choose a working path";
                     label3.Image = Image.FromFile(@"icons8-documents-folder-18.png");
                     this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
-                    // Start the asynchronous operation.
-                  
-                        VariableValueResponse valueResponse1 = (VariableValueResponse)syncClient.SendRequest(new ReadVariableRequest("$ROBNAME[]"));
-                        RBname = valueResponse1.Value;
-                        Console.AppendText("[Info: " + dateNow + "] " + "Connection to " + RBname + " established, please choose a path" + System.Environment.NewLine);
+                    // kommunikation zwischen Server und Handler - hier Robnameabfrage
 
+                    VariableValueResponse valueResponse1 = (VariableValueResponse)syncClient.SendRequest(new ReadVariableRequest("$ROBNAME[]"));
+                    RBname = valueResponse1.Value;
+                    Console.AppendText("[Info: " + dateNow + "] " + "Connection to " + RBname + " established, please choose a path" + System.Environment.NewLine);
+
+                    // prüf welche folder sind am Roboter
 
                     ListDirectoryRequest request21 = new ListDirectoryRequest(@"KRC:\");
                     ListDirectoryResponse response21 = (ListDirectoryResponse)syncClient.SendRequest(request21);
+
+                   
                     var programmsList = new List<string>();
                     for (int i = 0; i < response21.Count; i++)
 
@@ -125,18 +132,26 @@ namespace RowaConnect
                 catch (Exception ex)
 
                 {
+                    // info, in falls IP ist falsch oder c3 bridge ist nicht eingeschalten
+                    connected = false;
 
+                    Console.AppendText("[Warning: " + dateNow + "] " + "Connection not established. Check if C3Bridge on the Robot is on, port 7000 is allowed and IP adress is correct" + System.Environment.NewLine);
                     connected = false;
-                    
-                    Console.AppendText("[Warning: " + dateNow +"] " + "Connection not established. Check if C3Bridge on the Robot is on, port 7000 is allowed and IP adress is correct" + System.Environment.NewLine );
-                    connected = false;
-                    label3.Text = "        Not Connected";
+                    label3.Text = "        Not connected";
                     label3.Image = Image.FromFile(@"icons8-close-20.png");
                     Connect_TB.Enabled = true;
                     Unconnect_label.Enabled = false;
                     button1.Enabled = false;
                     button2.Enabled = false;
                 }
+            }
+            else 
+            {
+                // info, wenn IP ist falsch
+                Console.AppendText("[Error: " + dateNow + "] " + "IP Address is wrong" + System.Environment.NewLine);
+
+                label3.Text = "        Not connected";
+
             }
 
         }
@@ -160,6 +175,8 @@ namespace RowaConnect
             button2.Enabled = false;
             Connect_TB.Enabled = true;
         }
+
+        // Data und Value lesen von txt files
         public class DataLesen
         {
             public object? DataOnRobot { get; set; }
@@ -210,7 +227,7 @@ namespace RowaConnect
         {
 
 
-            // using variables
+            // infinite loop für program 
             for (; ; )
             {
                 API.Subscription1();
@@ -225,7 +242,7 @@ namespace RowaConnect
                 valueLesen.ReadConfig(@"ValueDict.txt");
 
 
-
+                // neu dictionary in program von txt files
                 Dictionary<string, string> ProgramDict = new Dictionary<string, string>();
                 Dictionary<string, float> ValueDict = new Dictionary<string, float>();
 
@@ -254,7 +271,7 @@ namespace RowaConnect
                         string VersDat = Convert.ToString(response26.LastWriteTime);
 
                         string VersDatOnRobot;
-
+                        // wenn wir haben das program schon in txt file wir nehmen deten von letze modifikation
 
                         if (ProgramDict.ContainsKey(ProgrammName) == true)
                         {
@@ -262,7 +279,7 @@ namespace RowaConnect
                             ProgramDict.TryGetValue(ProgrammName, out VersDatOnRobot);
 
                         }
-
+                        // wenn nicht, dann wir machen neu program für dictionary (neue variable)
                         else
                         {
                             ProgramDict.Add(ProgrammName, VersDat);
@@ -271,7 +288,7 @@ namespace RowaConnect
                             VersDatOnRobot = VersDat;
 
                         }
-
+                        // Wenn letze modifikation data ist anders als in dictionary wir macher neue program version und schreiben es zu dictionary
 
                         if (VersDat != VersDatOnRobot)
                         {
@@ -283,12 +300,16 @@ namespace RowaConnect
                             ValueDict[ProgrammName] = VersionOnRobot;
                         }
                         else
+
+                        //  wenn ist gleich, dann wir lesen von dictionary program version
                         {
                             VersionOnRobot = valueLesen.ValueOnRobot;
                             ValueDict[ProgrammName] = VersionOnRobot;
                         }
 
                         #region dict to file 
+
+                        // speichern dictionary to txt file
                         string lines = System.IO.File.ReadAllText(@"ProgramDict.txt");
 
                         if (lines.Contains(ProgrammName))
@@ -361,7 +382,7 @@ namespace RowaConnect
 
                 if (SubNr == 2)
                 {
-
+                    // von KRC to server
                     SetFileAttributesRequest request20 = new SetFileAttributesRequest(@"KRC:\" + ProgramPath + ProgrammName, ItemAttribute.None, ItemAttribute.None);
 
                     Response response = syncClient.SendRequest(request20);
@@ -386,7 +407,8 @@ namespace RowaConnect
                 }
 
                 if (SubNr == 3)
-                {
+                { 
+                    // von server to KRC
  
                     SetFileAttributesRequest request21 = new SetFileAttributesRequest(@"" + Form1._Root  + ProgrammName + "_V" + VersionServer, ItemAttribute.None, ItemAttribute.None);
 
@@ -457,7 +479,7 @@ namespace RowaConnect
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Program bases on C3Bridge Open Source." + System.Environment.NewLine + "Made by Rowa Automation." + System.Environment.NewLine + "For questions and contact please send an e - mail to marlena.pirchl@rowa-automation.at.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Program bases on C3Bridge Open Source." + System.Environment.NewLine + "Made by Rowa Automation." + System.Environment.NewLine + "For questions and contact please send an e - mail to marlena.pirchl@rowa-automation.at or max-hoedl@rowa-automation.at.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -657,6 +679,8 @@ namespace RowaConnect
         {
             if (Form1.SubNr == 4)
             {
+
+                // das ist ok
                 var client = new RestClient("http://localhost:1026/");
                 var request = new RestRequest("v2/entities/Robot1/attrs/writeOrderstatus?type=Order", Method.Put);
                 request.AddHeader("fiware-service", "robot_info");
@@ -677,8 +701,10 @@ namespace RowaConnect
 
             if (Form1.SubNr == 1)
             {
+
+                // hier ist url zu wechseln wenn neue subscription funktioniert
                 var client = new RestClient("http://localhost:1026/");
-                var request = new RestRequest("v2/entities/Robot1/attrs/writeOrderstatus?type=Order", Method.Put);
+                var request = new RestRequest("v2/entities/Robot1/attrs/writeOrderstatus?type=Order", Method.Put); // here writeOrderStatus?type=Order to writeProductstatus?type=Product
                 request.AddHeader("fiware-service", "robot_info");
                 request.AddHeader("fiware-servicepath", "/demo");
                 request.AddHeader("Content-Type", "application/json");
@@ -700,6 +726,7 @@ namespace RowaConnect
         public static void GetProgramData()
 
         {
+            // json lesen und data von programm nehmen 
 
             var client = new RestClient("http://localhost:1026/");
             var request = new RestRequest("/v2/entities/" + Form1.OrderID);
@@ -748,6 +775,7 @@ namespace RowaConnect
         public static void GetDataID()
 
         {
+            // json lesen und data von programm nehmen 
 
             var client = new RestClient("http://localhost:1026/");
             var request = new RestRequest("v2/entities/" + Form1.IDName, Method.Get);
@@ -803,6 +831,8 @@ namespace RowaConnect
         public static void Subscription1()
 
         {
+
+            // 4 sub, in falls, brauchst du neue, enfach copy paste und name wechseln
 
             var client = new RestClient("http://localhost:5011/");
             var request = new RestRequest("/Subscription1");
