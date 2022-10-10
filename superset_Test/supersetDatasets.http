@@ -110,8 +110,8 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
   "versionOnRobot": {
-      "value": true,
-      "type": "Boolean"
+      "value": 1,
+      "type": "Integer"
   },
   "processingLength": {
     "value": 758,
@@ -181,8 +181,8 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
   "versionOnRobot": {
-      "value": true,
-      "type": "Boolean"
+      "value": 1,
+      "type": "Integer"
   },
   "processingLength": {
     "value": 337,
@@ -216,8 +216,8 @@ fiware-servicepath: /demo
     "type": "Integer"
   },
   "versionOnRobot": {
-      "value": true,
-      "type": "Boolean"
+      "value": 1,
+      "type": "Integer"
   },
   "processingLength": {
     "value": 340,

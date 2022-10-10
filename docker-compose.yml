@@ -208,7 +208,7 @@ services:
       - "1026:1026"
     depends_on:
       - orion_mongo
-    entrypoint: /usr/bin/contextBroker -fg -multiservice -ngsiv1Autocast -statCounters -dbhost mongo -logForHumans -logLevel DEBUG -t 255
+    entrypoint: /usr/bin/contextBroker -fg -multiservice -ngsiv1Autocast -statCounters -dbhost mongo -logForHumans -logLevel DEBUG -t 255 -corsOrigin __ALL -corsMaxAge 600
 
   orion_mongo:
     hostname: orion_mongo
@@ -258,13 +258,6 @@ services:
     volumes:
       - crate-db:/data
 
-
-
-  rowaconsoleclient:
-    image: rowaconsoleclient
-    build:
-      context: .
-      dockerfile: ./Dockerfile
 
   pythonapplication1:
     image: pythonapplication1

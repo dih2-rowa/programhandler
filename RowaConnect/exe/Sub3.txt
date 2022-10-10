@@ -1,0 +1,1 @@
+{"subscriptionId": "6307051e590bcf49e54dd384", "data": [{"id": "ServToRobReq1", "type": "ServToRobReq", "productID": {"type": "String", "value": "", "metadata": {"dateCreated": {"type": "DateTime", "value": "2022-08-25T05:06:26.779Z"}, "dateModified": {"type": "DateTime", "value": "2022-08-25T06:27:39.358Z"}}}}]}

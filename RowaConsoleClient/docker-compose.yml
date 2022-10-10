@@ -1,9 +1,0 @@
-
-version: '3.4'
-
-services:
-  rowaconsoleclient:
-    image: rowaconsoleclient
-    build:
-      context: .
-      dockerfile: ./Dockerfile
