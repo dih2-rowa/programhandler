@@ -11,7 +11,9 @@ Paste a repository URL and choose a place on your disc, where Rose-AP1 and Rose-
 
 To run Infomation Server, open a repository in Visual Studio code and perform these steps:
 1.	Chose folder API and with a right-click button chose an option:  Open in Integrated Terminal.
-2.	Run a command docker-compose up
+2.	Run a command docker-compose up, altenatively you can just right click on docker-compose.yml and choose a command Compose Up
+![image](https://user-images.githubusercontent.com/103100980/198825387-ac37d251-4ffa-4e60-85a3-86a0c0cc4f39.png)
+
 3.	Put in console commands visible below: 
 
 
@@ -28,7 +30,10 @@ To run Infomation Server, open a repository in Visual Studio code and perform th
   ```  -	npm i @zxing/ngx-scanner@3.5.0 --save```
 
   
-4.	After install every component find a file named docker-compose.yml and with a right mouse button choose an option Compose Up. 
+4.	After install every component find a file named docker-compose.yml  in a folder Client and with a right mouse button choose an option Compose Up. 
+
+![image](https://user-images.githubusercontent.com/103100980/198825414-b16c4dbe-b154-4fa4-8ee9-d839b81f3715.png)
+
 5.	Server Works, webpage can be visible on localhost:4100
 
 Terminal should look like this : ![image](https://user-images.githubusercontent.com/103100980/192731321-45c8e88b-3231-46a9-aa1b-e4b4b3da3d2e.png)
