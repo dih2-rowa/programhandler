@@ -78,7 +78,7 @@ Before running this application, it is essential to download some software:
 
     Install with all default suggestion
 
-    After installing Visual Studio you need some extention: ![image](https://user-images.githubusercontent.com/103100980/192717645-d54930a4-1d34-485b-9fe6-c9c1e75501a8.png)
+    After installing Visual Studio you need some extention:![image](https://user-images.githubusercontent.com/103100980/198825058-4716e10b-0319-4840-94db-966329b76cca.png)
 
   
     To install it choose this icon ![image](https://user-images.githubusercontent.com/103100980/192713313-917b6c56-4d1e-4967-8353-37650f33b694.png)
