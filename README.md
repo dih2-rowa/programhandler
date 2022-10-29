@@ -34,6 +34,11 @@ The interface to the OCB was realised via a specially developed API. The communi
 ### File Server
 The file server is used to make robot programs available to several processing centres.
 
+
+## How to install it?
+
+Check the file [getting_started.md](/docs/getting_started.md). And follow steps of every Doku.
+
 ## How to adapt it?
 
 This software is working only with Kuka KRC4 robot, with operation system Windows XP or higher. 
