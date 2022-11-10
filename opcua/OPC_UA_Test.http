@@ -12,7 +12,7 @@ Content-Type: application/json
       "service_path": "/demo",
       "entity_name": "Robot1",
       "entity_type": "Order",
-      "endpoint": "opc.tcp://192.168.1.10:4840",
+      "endpoint": "opc.tcp://10.83.10.13:4840",
       "attributes": [
         {
           "object_id": "ProductID",
