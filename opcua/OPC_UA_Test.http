@@ -1,5 +1,5 @@
 ### Should not be needed
-POST http://localhost:4001/iot/devices
+POST http://10.92.80.10:4001/iot/devices
 fiware-service: robot_info
 fiware-servicepath: /demo
 Content-Type: application/json
@@ -54,18 +54,18 @@ Content-Type: application/json
 
 
 ### IOT entities
-GET http://localhost:4007/iot/devices/
+GET http://10.92.80.10:4007/iot/devices/
 fiware-service: robot_info
 fiware-servicepath: /demo
 
 ### Query entity
-GET http://localhost:1026/v2/entities/
+GET http://10.92.80.10:1026/v2/entities/
 fiware-service: robot_info
 fiware-servicepath: /demo
 
 
 ### Update Entity
-PATCH http://localhost:1026/v2/entities/Robot1/attrs
+PATCH http://10.92.80.10:1026/v2/entities/Robot1/attrs
 fiware-service: robot_info
 fiware-servicepath: /demo
 content-type: application/json
@@ -78,7 +78,7 @@ content-type: application/json
 }
 
 ### Execute OPC-UA Method
-PUT http://localhost:1026/v2/entities/Robot1/attrs/writeOrderstatus?type=Order
+PUT http://10.92.80.10:1026/v2/entities/Robot1/attrs/writeOrderstatus?type=Order
 fiware-service: robot_info 
 fiware-servicepath: /demo
 content-type: application/json
@@ -89,7 +89,7 @@ content-type: application/json
 }
 
 ### Execute OPC-UA Method NEUE SUBSKRIPTION
-PUT http://localhost:1026/v2/entities/Robot1/attrs/writeProductstatus?type=Product
+PUT http://10.92.80.10:1026/v2/entities/Robot1/attrs/writeProductstatus?type=Product
 fiware-service: robot_info 
 fiware-servicepath: /demo
 content-type: application/json
@@ -101,19 +101,19 @@ content-type: application/json
 
 
 ### Query subscriptions
-GET http://localhost:1026/v2/subscriptions
+GET http://10.92.80.10:1026/v2/subscriptions
 fiware-service: robot_info
 fiware-servicepath: /demo
 
 
 ### Query registrations
-GET http://localhost:1026/v2/registrations
+GET http://10.92.80.10:1026/v2/registrations
 fiware-service: robot_info
 fiware-servicepath: /demo
 
 
 ### Add subscription to entity (https://quantumleap.readthedocs.io/en/latest/user/using/#orion-subscription)
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -142,7 +142,7 @@ fiware-servicepath: /demo
 
 
 ### Add subscription for order Request
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -170,7 +170,7 @@ fiware-servicepath: /demo
 }
 
 ### Add subscription for version Request
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -198,7 +198,7 @@ fiware-servicepath: /demo
 }
 
 ### Send trigger for program transfer Server --> Robot
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -226,7 +226,7 @@ fiware-servicepath: /demo
 }
 
 ### Send trigger for program transfer Robot --> Server
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -254,7 +254,7 @@ fiware-servicepath: /demo
 }
 
 ###
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
