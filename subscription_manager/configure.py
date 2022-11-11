@@ -3,7 +3,7 @@ import requests
 import json
 from random import random
 
-OCB="http://localhost:1026/v2"
+OCB="http://10.92.80.10:1026/v2"
 headers = {"content-type": "application/json"}
 
 ENTITY = """{
