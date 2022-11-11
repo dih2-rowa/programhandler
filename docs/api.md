@@ -6,13 +6,13 @@ Basic API's are included in Information server, there you can Get/Add/Delete/Upd
 Get Question
 
 ```
-GET http://localhost:1026/v2/entities/
+GET http://10.92.80.10:1026/v2/entities/
 fiware-service: robot_info
 fiware-servicepath: /demo```
 
 Add
 ```
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -60,7 +60,7 @@ fiware-servicepath: /demo
 Update
 
 ```
-PUT http://localhost:1026/v2/entities/Robot1/attrs/writeProductstatus?type=Product
+PUT http://10.92.80.10:1026/v2/entities/Robot1/attrs/writeProductstatus?type=Product
 fiware-service: robot_info 
 fiware-servicepath: /demo
 content-type: application/json
@@ -75,7 +75,7 @@ content-type: application/json
 Add a subscription
 
 ```
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
