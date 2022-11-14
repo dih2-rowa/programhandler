@@ -137,7 +137,7 @@ namespace ProgramNummerCheck
                 if (SubNr == 1 || SubNr == 4)
                 {
 
-                    FilePropertiesRequest request26 = new FilePropertiesRequest(@"KRC:\R1\Program\ROWA\" + ProgrammName);
+                    FilePropertiesRequest request26 = new FilePropertiesRequest(@"KRC:\R1\Program\ROWA\jobs" + ProgrammName);
 
 
 
@@ -256,12 +256,12 @@ namespace ProgramNummerCheck
                 {
 
 
-                    SetFileAttributesRequest request20 = new SetFileAttributesRequest(@"KRC:\R1\Program\ROWA\" + ProgrammName, ItemAttribute.None, ItemAttribute.None);
+                    SetFileAttributesRequest request20 = new SetFileAttributesRequest(@"KRC:\R1\Program\ROWA\jobs" + ProgrammName, ItemAttribute.None, ItemAttribute.None);
 
                     Response response = syncClient.SendRequest(request20);
 
                     // Move
-                    response = syncClient.SendRequest(new CopyFileRequest(@"KRC:\R1\Program\ROWA\" + ProgrammName, @"E:\" + ProgrammName +"_V" + VersionServer));
+                    response = syncClient.SendRequest(new CopyFileRequest(@"KRC:\R1\Program\ROWA\jobs" + ProgrammName, @"E:\" + ProgrammName +"_V" + VersionServer));
 
                     SubNr = 0;
                 }
@@ -277,7 +277,7 @@ namespace ProgramNummerCheck
                     Response response1 = syncClient.SendRequest(request21);
 
                     // Move
-                    response1 = syncClient.SendRequest(new CopyFileRequest(@"E:\" + ProgrammName, @"KRC:\R1\PROGRAM\ROWA\" + ProgrammName + "_V" + VersionServer));
+                    response1 = syncClient.SendRequest(new CopyFileRequest(@"E:\" + ProgrammName, @"KRC:\R1\Program\ROWA\jobs" + ProgrammName + "_V" + VersionServer));
 
 
                     SubNr = 0;
