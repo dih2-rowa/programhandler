@@ -72,7 +72,7 @@
 	"defaultType": null,
 	"contexts": [
 	{
-		"id": "Robot3",
+		"id": "Robot1",
 		"type": "Processdata",
 		"service": "robot_info",
 		"subservice": "/demo",
