@@ -267,6 +267,12 @@ services:
     ports:
       - 5011:5011
 
+  rowaconsoleclient:
+    image: rowaconsoleclient
+    build:
+      context: .
+      dockerfile: ./RowaConsoleClient/Dockerfile
+
 volumes:
   iotmongo_data:
   iotmongo_conf:
