@@ -1,0 +1,36 @@
+{
+  "id": "urn:ngsiv2:I40Asset:Product00001",
+  "type": "I40Asset",
+  "I40PhysicalModelType": {
+    "value": "Product",
+    "type": "String"
+  },
+  "I40AssetName": {
+    "value": "MY83_9G920",
+    "type": "String"
+  },
+  "programName": {
+    "value": "MY83_9G920.src",
+    "type": "String"
+  },
+  "programVersion": {
+    "value": 1,
+    "type": "Integer"
+  },
+  "versionOnRobot": {
+      "value": true,
+      "type": "Boolean"
+  },
+  "processingLength": {
+    "value": 324,
+    "type": "Integer"
+  },
+  "planCycleTime": {
+    "value": 34,
+    "type": "Integer"
+  },
+  "pdf": {
+    "value": "MY83_9G920.pdf",
+    "type": "String"
+  }
+}

@@ -1,0 +1,40 @@
+{
+    "id": "Ordernumber123",
+    "type": "Order",
+    "productID": {
+      "value": "Blasius3",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 1987,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 1985,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2017-08-19 12:17:55",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2017-09-19 12:17:55",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2017-08-19 12:17:55",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "value": "Finished",
+      "type": "String"
+    },
+    "workingStation": {    
+      "value": "Robot1",
+      "type": "String"
+    }
+  }

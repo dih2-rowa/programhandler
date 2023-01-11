@@ -1,0 +1,36 @@
+{
+  "id": "Robot1",
+  "type": "Processdata",
+  "version": {
+    "value": 1,
+    "type": "Integer"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 32,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Raw part",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Processed part", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 320000,
+    "type": "Integer"
+  },
+    "orderID": {
+      "value": "ON000544",
+      "type": "String"
+  }
+}

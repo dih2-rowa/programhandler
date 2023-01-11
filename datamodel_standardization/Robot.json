@@ -1,0 +1,40 @@
+{
+  "id": "urn:ngsiv2:I40Asset:Workstation00001",
+  "type": "I40Asset",
+  "I40PhysicalModelType": {
+    "value": "Workstation",
+    "type": "String"
+  },
+  "I40AssetName": {
+    "value": "Robot1",
+    "type": "String"
+  },
+    "orderID": {
+      "value": "urn:ngsiv2:I40Asset:ON000001",
+      "type": "String"
+  },
+  "robotRunning": {
+    "value": true,
+    "type": "Boolean"
+  },
+  "robotSpeed": {
+    "value": 100,
+    "type": "Integer"
+  },
+  "currCycleTime": {
+    "value": 32,
+    "type": "Integer"
+  },
+  "drawer1Status": {
+    "value": "Idle/Execute/Complete",
+    "type": "String"
+  },
+  "drawer2Status": {
+    "value": "Idle/Execute/Complete", 
+    "type": "String"
+  },
+    "restServiceLife": {
+    "value": 320000,
+    "type": "Integer"
+  }
+}

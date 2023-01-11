@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsiv2:I40Asset:Request00001",
+  "type": "I40Asset",
+  "I40PhysicalModelType": {
+    "value": "Request",
+    "type": "String"
+  },
+  "I40AssetName": {
+    "value": "ProgRobToServ/ProgServToRob/Version/Order",
+    "type": "String"
+  },
+  "requestID": {
+    "value": "urn:ngsiv2:I40Asset:ON000001/urn:ngsiv2:I40Asset:Product00001",
+    "type": "string"
+  }
+}
