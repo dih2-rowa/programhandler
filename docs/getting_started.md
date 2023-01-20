@@ -10,7 +10,7 @@
 
 ## Install the components and get project files
 
-- Complete the [installation guide](installationguide.md).
+- Complete the [installation guide](instalationguide.md).
 
 ## Running docker-compose.
 
