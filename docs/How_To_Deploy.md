@@ -1,13 +1,4 @@
-### Introduction
 
-To run ROSE AP1, you need to open Visual Studio Code. In new window find a Clone Git Repository:
-
-![image](https://user-images.githubusercontent.com/103100980/192727858-c6e1cf64-cf61-4a95-b996-c79961e3c1d4.png)
- , above appear a text field to provide repository URL or pick a repository source:  ![image](https://user-images.githubusercontent.com/103100980/192727886-d1a71517-39b9-4646-83de-6058d0113e1b.png)
-
-Paste a repository URL and choose a place on your disc, where Rose-AP1 and Rose-AP2 should be cloned. 
-
- 
 ### Program Handler - Server
 
 
@@ -34,3 +25,5 @@ Download C3 Bridge Interface Server from here https://github.com/ulsu-tech/c3bri
 Alternatively, you can write a command in PowerShell: 
 ```wsl -d docker-desktop sysctl -w vm.max_map_count=262144```
 3.	In repository find a file named docker-compose.yml and with right mouse button choose an option Compose Up.
+![image](https://user-images.githubusercontent.com/102011176/215488083-84fdbd86-e485-4e8e-a461-28d6a33b5734.png)
+
