@@ -1,8 +1,0 @@
-{
-  "id": "RobToServReq1",
-  "type": "RobToServReq",
-  "productID": {
-    "value": "blasius1",
-    "type": "string"
-  }
-}
