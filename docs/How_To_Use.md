@@ -1,6 +1,10 @@
-### Configuration Of RoseAP1
+### How to use the robot program handler
 
-To run Rose-AP1 put a proper IP Address and Port. Port is prechosen to 7000 – same as in Robot Controller. 
+After adapting and deploying it, program is supposed to be able to recive any wished order information directly on HMI and download/update programs from/to file server only by ordering it on HMI.
+
+HMI should be prepared for operator, the way, that involved people can freely use it.
+
+To run the robot program handler put a proper IP Address and Port. Port is prechosen to 7000 – same as in Robot Controller. 
 
  ![image](https://user-images.githubusercontent.com/103100980/192728633-e60c79be-57d1-4272-ace3-60364cd75f43.png)
 
