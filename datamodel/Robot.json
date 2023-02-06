@@ -1,6 +1,6 @@
 {
   "id": "urn:ngsiv2:I40Asset:Workstation00001",
-  "type": "I40Asset",
+  "type": "I40AssetWorkstation",
   "I40PhysicalModelType": {
     "value": "Workstation",
     "type": "String"

@@ -1,6 +1,6 @@
 {
   "id": "urn:ngsiv2:I40Asset:Product00001",
-  "type": "I40Asset",
+  "type": "I40AssetProduct",
   "I40PhysicalModelType": {
     "value": "Product",
     "type": "String"

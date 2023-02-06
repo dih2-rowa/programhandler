@@ -1,6 +1,6 @@
 {
     "id": "urn:ngsiv2:I40Asset:ON000001",
-    "type": "I40Asset",
+    "type": "I40AssetOrder",
     "I40PhysicalModelType": {
       "value": "Order",
       "type": "String"
