@@ -26,11 +26,11 @@
     "type": "Integer"
   },
   "drawer1Status": {
-    "value": "Idle/Execute/Complete",
+    "enum": ["Idle", "Execute" , "Complete"],
     "type": "String"
   },
   "drawer2Status": {
-    "value": "Idle/Execute/Complete", 
+    "enum": ["Idle", "Execute" , "Complete"], 
     "type": "String"
   },
     "restServiceLife": {

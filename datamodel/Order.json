@@ -42,7 +42,7 @@
         "type": "Datetime"
     },
     "orderStatus": {
-      "value": "Idle/Execute/Complete", 
+      "enum": ["Idle", "Execute" , "Complete"], 
       "type": "String"
     },
     "oee": {
