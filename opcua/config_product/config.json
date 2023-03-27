@@ -65,7 +65,7 @@
 	"defaultType": null,
 	"contexts": [
 	{
-		"id": "Robot1",
+		"id": "MY83_9G920",
 		"type": "Product",
 		"service": "robot_info",
 		"subservice": "/demo",

@@ -1,0 +1,60 @@
+{
+    "id": "urn:ngsiv2:I40Asset:ON000001",
+    "type": "I40AssetOrder",
+    "I40PhysicalModelType": {
+      "value": "Order",
+      "type": "String"
+    },
+    "I40AssetName": {
+      "value": "ON000001",
+      "type": "String"
+    },
+    "productID": {
+      "value": "urn:ngsiv2:i40Asset:Product00001",
+      "type": "String"
+    },
+    "workstationID": {    
+      "value": "urn:ngsiv2:i40Asset:Workstation00001",
+      "type": "String"
+    },
+    "planParts": {
+      "value": 10000,
+      "type": "Integer"
+    },
+    "prodParts": {
+      "value": 1987,
+      "type": "Integer"
+    },
+    "prodPartsIO": {
+      "value": 1985,
+      "type": "Integer"
+    },
+    "startTime": {
+        "value": "2017-08-19 12:17:55",
+        "type": "Datetime"
+    },
+    "finishedTime": {
+      "value": "2017-09-19 12:17:55",
+      "type": "Datetime"
+    },
+    "deadline": {
+        "value": "2017-08-19 12:17:55",
+        "type": "Datetime"
+    },
+    "orderStatus": {
+      "enum": ["Idle", "Execute" , "Complete"], 
+      "type": "String"
+    },
+    "oee": {
+      "value": 69.0,
+      "type": "Number"
+    },
+    "oeePerfomrance": {
+      "value": 71.0,
+      "type": "Number"
+    },
+    "oeeQuality": {
+      "value": 96.0,
+      "type": "Number"
+    }
+  }

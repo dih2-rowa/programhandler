@@ -1,0 +1,12 @@
+{
+  "id": "urn:ngsiv2:I40Asset:Request00001",
+  "type": "I40AssetRequest",
+  "I40AssetName": {
+    "enum": ["ProgRobToServ", "ProgServToRob" , "Version", "Order"], 
+    "type": "String"
+  },
+  "requestID": {
+    "value": "urn:ngsiv2:I40Asset:ON000001/urn:ngsiv2:I40Asset:Product00001",
+    "type": "string"
+  }
+}

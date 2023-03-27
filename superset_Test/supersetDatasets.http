@@ -1,5 +1,5 @@
 ### Add subscription for processdata
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -28,7 +28,7 @@ fiware-servicepath: /demo
 }
 
 ### Add subscription for order
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -57,7 +57,7 @@ fiware-servicepath: /demo
 }
 
 ### Add subscription for product
-POST http://localhost:1026/v2/subscriptions
+POST http://10.92.80.10:1026/v2/subscriptions
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -93,7 +93,7 @@ fiware-servicepath: /demo
 
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -129,7 +129,7 @@ fiware-servicepath: /demo
 
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -164,7 +164,7 @@ fiware-servicepath: /demo
 }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -199,7 +199,7 @@ fiware-servicepath: /demo
 }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -238,7 +238,7 @@ fiware-servicepath: /demo
 ####################
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -285,7 +285,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -332,7 +332,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -375,7 +375,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -418,7 +418,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -461,7 +461,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -508,7 +508,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -555,7 +555,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -602,7 +602,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -645,7 +645,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -692,7 +692,7 @@ fiware-servicepath: /demo
   }
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -746,7 +746,7 @@ fiware-servicepath: /demo
 
 
 ### Entity creation
-POST http://localhost:1026/v2/entities/
+POST http://10.92.80.10:1026/v2/entities/
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -789,7 +789,7 @@ fiware-servicepath: /demo
 }
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -831,7 +831,7 @@ fiware-servicepath: /demo
 
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -872,7 +872,7 @@ fiware-servicepath: /demo
 }
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -913,7 +913,7 @@ fiware-servicepath: /demo
 }
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -955,7 +955,7 @@ fiware-servicepath: /demo
 
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -998,7 +998,7 @@ fiware-servicepath: /demo
 }
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -1040,7 +1040,7 @@ fiware-servicepath: /demo
 
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -1081,7 +1081,7 @@ fiware-servicepath: /demo
 }
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -1122,7 +1122,7 @@ fiware-servicepath: /demo
 }
 
 ### Entity creation
-PATCH  http://localhost:1026/v2/entities/Robot1/attrs
+PATCH  http://10.92.80.10:1026/v2/entities/Robot1/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo
@@ -1164,7 +1164,7 @@ fiware-servicepath: /demo
 
 
 ### Entity creation
-PUT  http://localhost:1026/v2/entities/ON000544/attrs
+PUT  http://10.92.80.10:1026/v2/entities/ON000544/attrs
 content-type: application/json
 fiware-service: robot_info
 fiware-servicepath: /demo

@@ -64,7 +64,7 @@ namespace RowaConnect
             Connect_TB.Enabled = true;
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) // das ist wegen IP adress, dass kan man nur Number und punkt schreiber´n
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) // das ist wegen IP adress, dass kan man nur Number und punkt schreiberï¿½n
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
@@ -106,7 +106,7 @@ namespace RowaConnect
                     RBname = valueResponse1.Value;
                     Console.AppendText("[Info: " + dateNow + "] " + "Connection to " + RBname + " established, please choose a path" + System.Environment.NewLine);
 
-                    // prüf welche folder sind am Roboter
+                    // prï¿½f welche folder sind am Roboter
 
                     ListDirectoryRequest request21 = new ListDirectoryRequest(@"KRC:\");
                     ListDirectoryResponse response21 = (ListDirectoryResponse)syncClient.SendRequest(request21);
@@ -227,7 +227,7 @@ namespace RowaConnect
         {
 
 
-            // infinite loop für program 
+            // infinite loop fï¿½r program 
             for (; ; )
             {
                 API.Subscription1();
@@ -279,7 +279,7 @@ namespace RowaConnect
                             ProgramDict.TryGetValue(ProgrammName, out VersDatOnRobot);
 
                         }
-                        // wenn nicht, dann wir machen neu program für dictionary (neue variable)
+                        // wenn nicht, dann wir machen neu program fï¿½r dictionary (neue variable)
                         else
                         {
                             ProgramDict.Add(ProgrammName, VersDat);
@@ -453,7 +453,7 @@ namespace RowaConnect
                 if (Form1.ErrorNummer == 2) 
                 {
                     Console.Invoke(new MethodInvoker(delegate {
-                        Console.AppendText("[Error: " + dateNow + "]" + "Error occured  while connecting to localhost:5011, check if subscription manager is on" + System.Environment.NewLine);
+                        Console.AppendText("[Error: " + dateNow + "]" + "Error occured  while connecting to 10.92.80.10:5011, check if subscription manager is on" + System.Environment.NewLine);
                     }));
                     Form1.ErrorNummer = 0;
 
@@ -681,7 +681,7 @@ namespace RowaConnect
             {
 
                 // das ist ok
-                var client = new RestClient("http://localhost:1026/");
+                var client = new RestClient("http://10.92.80.10:1026/");
                 var request = new RestRequest("v2/entities/Robot1/attrs/writeOrderstatus?type=Order", Method.Put);
                 request.AddHeader("fiware-service", "robot_info");
                 request.AddHeader("fiware-servicepath", "/demo");
@@ -703,7 +703,7 @@ namespace RowaConnect
             {
 
                 // hier ist url zu wechseln wenn neue subscription funktioniert
-                var client = new RestClient("http://localhost:1026/");
+                var client = new RestClient("http://10.92.80.10:1026/");
                 var request = new RestRequest("v2/entities/Robot1/attrs/writeOrderstatus?type=Order", Method.Put); // here writeOrderStatus?type=Order to writeProductstatus?type=Product
                 request.AddHeader("fiware-service", "robot_info");
                 request.AddHeader("fiware-servicepath", "/demo");
@@ -728,7 +728,7 @@ namespace RowaConnect
         {
             // json lesen und data von programm nehmen 
 
-            var client = new RestClient("http://localhost:1026/");
+            var client = new RestClient("http://10.92.80.10:1026/");
             var request = new RestRequest("/v2/entities/" + Form1.OrderID);
             request.AddHeader("fiware-service", "robot_info");
             request.AddHeader("fiware-servicepath", "/demo");
@@ -777,7 +777,7 @@ namespace RowaConnect
         {
             // json lesen und data von programm nehmen 
 
-            var client = new RestClient("http://localhost:1026/");
+            var client = new RestClient("http://10.92.80.10:1026/");
             var request = new RestRequest("v2/entities/" + Form1.IDName, Method.Get);
             request.AddHeader("fiware-service", "robot_info");
             request.AddHeader("fiware-servicepath", "/demo");
@@ -834,7 +834,7 @@ namespace RowaConnect
 
             // 4 sub, in falls, brauchst du neue, enfach copy paste und name wechseln
 
-            var client = new RestClient("http://localhost:5011/");
+            var client = new RestClient("http://10.92.80.10:5011/");
             var request = new RestRequest("/Subscription1");
             var response = client.Execute(request);
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -886,7 +886,7 @@ namespace RowaConnect
         public static void Subscription2() // Server to robot 
 
         {
-            var client = new RestClient("http://localhost:5011/");
+            var client = new RestClient("http://10.92.80.10:5011/");
             var request = new RestRequest("/Subscription2");
             var response = client.Execute(request);
 
@@ -937,7 +937,7 @@ namespace RowaConnect
         }
         public static void Subscription3()  // Robot to server
         {
-            var client = new RestClient("http://localhost:5011/");
+            var client = new RestClient("http://10.92.80.10:5011/");
             var request = new RestRequest("/Subscription3");
             var response = client.Execute(request);
 
@@ -989,7 +989,7 @@ namespace RowaConnect
 
         {
 
-            var client = new RestClient("http://localhost:5011/");
+            var client = new RestClient("http://10.92.80.10:5011/");
             var request = new RestRequest("/Subscription4");
             var response = client.Execute(request);
             if (response.StatusCode == System.Net.HttpStatusCode.OK)

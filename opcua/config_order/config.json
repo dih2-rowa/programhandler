@@ -78,7 +78,7 @@
 	"deviceRegistrationDuration": "P1M",
 	"defaultType": null,
 	"contexts": [{
-		"id": "Robot1",
+		"id": "ON000001",
 		"type": "Order",
 		"service": "robot_info",
 		"subservice": "/demo",

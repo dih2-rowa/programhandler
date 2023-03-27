@@ -7,7 +7,7 @@ Software is divided in 2 essential parts with are working simultaneously and can
 -	remotely send the files from tech provider
 -	store historical data from orders
 
-The center part of the project is a robotic cell. Robot makes the connection to PLC and Program handler which both are communication core. Through Rose AP-1 are send such information as:
+The center part of the project is a robotic cell. Robot makes the connection to PLC and Program handler which both are communication core. Following information is sent:
 -	Last modification of a program,
 -	Program Version on Robot and Server
 -	Length of process
@@ -25,8 +25,7 @@ The center part of the project is a robotic cell. Robot makes the connection to 
 -	Actual Order ID
 
 
-Every of those information are sent to Fiware, which is a context broker, so it sends this information simultaneously to Rose-AP2 and database. Also, in case, any data changed, there is an option to send a notification to inform and performs any steps if needed. 
-Rose-AP2 is a web server which shows data from Rose-AP1 in user friendly way. It has also an availability to add, delete and update entities such as robot, order or product, the way, that no knowledge of programming is needed. 
+Every of those information are sent to Fiware, which is a context broker. Also, in case, any data changed, there is an option to send a notification to inform and performs any steps if needed. 
 
 
 ![image](https://user-images.githubusercontent.com/103100980/192736179-d6ca1c45-5278-4d5d-bb79-3ea07c6fd699.png)
@@ -35,7 +34,7 @@ Rose-AP2 is a web server which shows data from Rose-AP1 in user friendly way. It
 
 
 #### Robot Program Handler – Client is a Program with Graphical User Interface.
-It’s designed to make Rose-AP1 as simple as possible without any knowledge of software programming. It’s the simple EXE program which makes a connection to robot, simply by writing correct IP address
+It’s designed to make robot program handler as simple as possible without any knowledge of software programming. It’s the simple EXE program which makes a connection to robot, simply by writing correct IP address
 
 #### Information Server
 Information server is a webpage which allows to check info about product, robot and order. Add new, change or delete any entities
